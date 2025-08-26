@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+
   const [result, setResult] = useState(0)
-  const [operacao, setOperacao] = useState('Somar')
+  const [operacao, setOperacao] = useState("")
   const [number1, setNumber1] = useState(0)
   const [number2, setNumber2] = useState(0)
 
@@ -41,16 +42,13 @@ function App() {
           <div>
             <h3>Operação:</h3>
             <select value={operacao} onChange={(e) => setOperacao(e.target.value)}>
-              <option value="somar" >Somar</option>
+              <option value="somar">Somar</option>
               <option value="subtrair">Subtrair</option>
-              <option value="multiplicar">Multiplicar</option>
               <option value="dividir">Dividir</option>
+              <option value="multiplicar">Multiplicar</option>
             </select>
           </div>
-
           <p> Resultado: {result} </p>
-
-
         </div>
 
       </div >
