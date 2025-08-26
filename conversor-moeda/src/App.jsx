@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
 function App() {
-  const [brl, setBrl] = useState(0)
   const [usd, setUsd] = useState(0)
   let [cotacao, setCotacao] = useState(0)
 
@@ -17,10 +16,6 @@ function App() {
         console.error('Erro ao buscar a cotação:', error);
       });
   }, []);
-
-  const handleConvert = () => {
-    setBrl(usd * cotacao);
-  }
 
   return (
 
