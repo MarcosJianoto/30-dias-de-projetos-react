@@ -1,22 +1,20 @@
 
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 
 function App() {
 
-  const [arr, setArr] = useState(["ana", "bia", "carlos"]);
+  const [showText, setShowText] = useState(true);
 
-  const [count, setCount] = useState("");
 
   return (
-    <div className='flex flex-col items-center justify-center h-screen'>
-      {arr.map((num, index) => (
-        <li key={index} > {num} </li>
-      ))}
+    <div className='flex flex-col items-center justify-center h-screen bg-gray-800 text-white'>
 
-      <input type="text" onChange={(e) => setCount(e.target.value)} />
+      <button className='flex hover:bg-white hover:text-black rounded-lg px-5 hover:cursor-pointer' onClick={() => setShowText(showText === true ? setShowText(false) : true)}>clique aqui</button>
+      <br />
+      {showText && <div className='flex'>esse texto irá desaparecer</div>}
 
-      <button onClick={() => setArr([...arr, count])} className='border' >adicionar nome</button>
-    </div>
+
+    </div >
   )
 }
 
