@@ -1,18 +1,23 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function App() {
 
-  const [showText, setShowText] = useState(true);
+  const [count, setCount] = useState(0);
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount(prev => prev + 1)
+    }, 1000)
+    return () => clearInterval(interval);
+  }, [])
 
 
   return (
     <div className='flex flex-col items-center justify-center h-screen bg-gray-800 text-white'>
-
-      <button className='flex hover:bg-white hover:text-black rounded-lg px-5 hover:cursor-pointer' onClick={() => setShowText(showText === true ? setShowText(false) : true)}>clique aqui</button>
-      <br />
-      {showText && <div className='flex'>esse texto irá desaparecer</div>}
-
+      <div>Contador automático</div>
+      <h1>{count}</h1>
 
     </div >
   )
