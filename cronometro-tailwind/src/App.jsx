@@ -13,7 +13,6 @@ function App() {
     return () => clearInterval(interval);
   }, [])
 
-
   return (
     <div className='flex flex-col items-center justify-center h-screen bg-gray-800 text-white'>
       <div>Contador automático</div>
