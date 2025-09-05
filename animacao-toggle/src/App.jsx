@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
           }`}
       >
         <span
-          className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform duration-1000 ease-in-out shadow-inner ${enabled ? "translate-x-[24px]" : "translate-x-0.5"
+          className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform duration-1000 ease-in-out ${enabled ? "translate-x-[24px]" : "translate-x-0.5"
             }`}
         />
       </button>
