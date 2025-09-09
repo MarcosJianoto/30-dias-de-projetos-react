@@ -8,7 +8,22 @@
     font-size: 2.25rem; /* text-4xl */
     font-weight: 700; /* font-bold */
     text-align: center; /* text-center */
-    margin-top: 1rem; /* my-4 (top) */
+    margin-bottom: 1rem; /* my-4 (bottom) */
+  }
+}
+@layer base {
+  h2 {
+    font-size: 1.5rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    text-align: center; /* text-center */
+    margin-bottom: 1rem; /* my-4 (bottom) */
+  }
+}
+@layer base {
+  h3 {
+    font-size: 1rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    text-align: center; /* text-center */
     margin-bottom: 1rem; /* my-4 (bottom) */
   }
 }
