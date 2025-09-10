@@ -1,0 +1,19 @@
+1 - preciso verificar referente ao horário, vou criar 1 agenda para a barbearia.
+---- essa agenda poderá ser acessada via front end.
+
+2 - é possível ter um certo controle, inicialmente eu havia pensado em controlar tudo,
+ mas no momento só vamos controlar mesmo os agendamentos para clientes.
+
+3 - existe uma questão mais embaixo -> pagamento.
+----pagamento é algo mais complexo, nao pretendo pensar nisso agora.
+
+
+
+Então o app ficará assim:
+Cliente envia a mensagem:
+OI,
+bate na api do whatsapp e responde com um retorno vindo do back end.
+o back end busca no banco de dados e envia o retorno para o cliente, informando horarios da agenda
+disponiveis para cortes / barba.
+
+
