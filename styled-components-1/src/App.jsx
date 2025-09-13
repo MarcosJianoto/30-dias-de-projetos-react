@@ -1,33 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>Styled Components</h1>
+        <p>Styled Components é uma biblioteca que permite escrever CSS dentro do JavaScript, utilizando a técnica de CSS-in-JS. Ela é amplamente utilizada em projetos React para estilizar componentes de forma modular e reutilizável.</p>
+        <p>Com Styled Components, você pode criar componentes estilizados que encapsulam tanto a lógica quanto o estilo, facilitando a manutenção e o reaproveitamento do código. A sintaxe utiliza template literals do JavaScript para definir estilos CSS diretamente dentro dos componentes.</p>
+        <p>Além disso, Styled Components oferece recursos avançados, como theming (tematização), suporte a props para estilos dinâmicos, e a capacidade de criar componentes com estilos condicionais. Isso torna a biblioteca uma escolha popular para desenvolvedores que buscam uma abordagem moderna e eficiente para estilizar aplicações React.</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
