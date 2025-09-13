@@ -1,5 +1,7 @@
 import { styled } from "styled-components"
 import GlobalsStyles from "./components/GlobalsStyles/index.jsx"
+import Cabecalho from "./components/CabecalhoO/index.jsx"
+
 
 
 
@@ -15,6 +17,13 @@ function App() {
     <>
       <FundoGradiente>
         <GlobalsStyles />
+
+        <Cabecalho />
+
+
+
+
+
 
 
       </FundoGradiente>
