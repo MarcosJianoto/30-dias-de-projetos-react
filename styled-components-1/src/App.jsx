@@ -1,6 +1,7 @@
 import { styled } from "styled-components"
 import GlobalsStyles from "./components/GlobalsStyles/index.jsx"
-import Cabecalho from "./components/CabecalhoO/index.jsx"
+import Cabecalho from "./components/Cabecalho/index.jsx"
+import CampoTexto from "./components/CampoTexto/index.jsx"
 
 
 
@@ -19,7 +20,7 @@ function App() {
         <GlobalsStyles />
 
         <Cabecalho />
-
+        <CampoTexto />
 
 
 
