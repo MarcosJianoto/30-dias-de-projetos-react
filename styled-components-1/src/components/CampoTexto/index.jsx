@@ -4,6 +4,7 @@ import Search from "../../../public/imgs/search.png"
 const InputWraper = styled.div`
     position: relative;
     display: inline-block;
+    align-items: center;
 `
 
 const InputText = styled.input`
