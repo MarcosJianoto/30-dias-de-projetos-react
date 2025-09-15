@@ -1,8 +1,10 @@
 import styled from "styled-components"
+import MenuHamburguer from "../MenuHamburguer"
+import { useState } from "react"
 
 const CardModal = styled.div`
     height: 400px;
-    width: 250;
+    width: 250px;
     position: relative;
 
     display: flex;
@@ -10,7 +12,7 @@ const CardModal = styled.div`
     align-items: center;
 
     overflow: hidden;
-    border-radius: 50px;
+    border-radius: 20px;
 
 
 img {
@@ -19,7 +21,6 @@ img {
 }
 
 img:hover{
-    cursor: pointer;
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
@@ -49,10 +50,16 @@ const SecondText = styled.h5`
 `
 
 const Card = ({ name, job, img }) => {
+    const [open, setOpen] = useState(false);
+
+
     return (
         <>
             <CardModal>
                 <img src={img} />
+                <MenuHamburguer open={open} setOpen={setOpen} >
+
+                </MenuHamburguer>
                 <ContentText>
                     <PrincipalText>
                         {name}

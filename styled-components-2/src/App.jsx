@@ -25,7 +25,7 @@ function App() {
         <GlobalsStyles />
 
         <Card name={"YINX"} job={"Frontend Developer"} img={OneImage} >
-          
+
 
         </ Card>
         <Card name={"SAOX"} job={"Web Designer"} img={TwoImage} >
