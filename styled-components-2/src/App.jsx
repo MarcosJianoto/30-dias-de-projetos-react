@@ -10,12 +10,10 @@ const FundoGradiente = styled.div`
   background: linear-gradient(#061a31, #000000 );
   width: 100vw;
   min-height: 100vh;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 30px;
-  
+  align-items: center; 
+  gap: 40px;
 
 `
 
@@ -26,11 +24,20 @@ function App() {
       <FundoGradiente>
         <GlobalsStyles />
 
-        <Card name={"YINX"} job={"Frontend Developer"} img={OneImage} />
-        <Card name={"SAOX"} job={"Web Designer"} img={TwoImage} />
-        <Card name={"JANL"} job={"Data Analytics"} img={TreeImage} />
+        <Card name={"YINX"} job={"Frontend Developer"} img={OneImage} >
+          
 
-      </FundoGradiente>
+        </ Card>
+        <Card name={"SAOX"} job={"Web Designer"} img={TwoImage} >
+
+
+        </ Card>
+        <Card name={"JANL"} job={"Data Analytics"} img={TreeImage} >
+
+
+        </ Card >
+
+      </FundoGradiente >
     </>
   )
 }

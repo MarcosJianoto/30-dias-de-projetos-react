@@ -2,22 +2,33 @@ import styled from "styled-components"
 
 const CardModal = styled.div`
     height: 400px;
-    width: 250px;
+    width: 250;
     position: relative;
+
+    display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
+    border-radius: 50px;
+
 
 img {
     width: 250px;
     height: 400px;
-    border-radius: 20px;
+}
+
+img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 `
 
 const ContentText = styled.div`
     position: absolute;
     bottom: 5px;
-    left: 20px;
+    left: 40px;
 
 `
 
