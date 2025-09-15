@@ -1,22 +1,22 @@
 import { styled } from "styled-components"
-import GlobalsStyles from "./components/GlobalsStyles/index.jsx"
-import Cabecalho from "./components/Cabecalho/index.jsx"
-import CampoTexto from "./components/CampoTexto/index.jsx"
-import BarraLateral from "./components/BarraLateral/index.jsx"
-
-
+import GlobalsStyles from "../../styled-components-2/src/components/GlobalsStyles"
+import Card from "./components/Card"
+import OneImage from "/public/imgs/one.png"
+import TwoImage from "/public/imgs/two.png"
+import TreeImage from "/public/imgs/tree.png"
 
 
 const FundoGradiente = styled.div`
-  background: linear-gradient(174.61deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
+  background: linear-gradient(#061a31, #000000 );
   width: 100vw;
   min-height: 100vh;
-`
-
-const TopBar = styled.div`
+  margin: 0 auto;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  gap: 30px;
+  
+
 `
 
 function App() {
@@ -26,12 +26,9 @@ function App() {
       <FundoGradiente>
         <GlobalsStyles />
 
-        <TopBar>
-          <Cabecalho />
-          <CampoTexto />
-        </TopBar>
-
-        <BarraLateral />
+        <Card name={"YINX"} job={"Frontend Developer"} img={OneImage} />
+        <Card name={"SAOX"} job={"Web Designer"} img={TwoImage} />
+        <Card name={"JANL"} job={"Data Analytics"} img={TreeImage} />
 
       </FundoGradiente>
     </>
