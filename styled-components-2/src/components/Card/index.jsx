@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import MenuHamburguer from "../MenuHamburguer"
 import { useState } from "react"
+import CardInternHidden from "../CardInternHidden"
 
 const CardModal = styled.div`
     height: 400px;
@@ -13,16 +14,11 @@ const CardModal = styled.div`
 
     overflow: hidden;
     border-radius: 20px;
-
-
-img {
+    
+    img {
     width: 250px;
     height: 400px;
-}
-
-img:hover{
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 `
 
@@ -49,17 +45,23 @@ const SecondText = styled.h5`
     margin: 2px;
 `
 
-const Card = ({ name, job, img }) => {
-    const [open, setOpen] = useState(false);
 
+const Card = ({ name, job, img }) => {
+
+    const [hovered, setHovered] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [intern, setIntern] = useState(false);
 
     return (
         <>
-            <CardModal>
-                <img src={img} />
-                <MenuHamburguer open={open} setOpen={setOpen} >
+            <CardModal onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} >
 
-                </MenuHamburguer>
+                <img src={img} style={{ transition: "transform 0.5s ease", transform: hovered ? "scale(1.1)" : "scale(1)" }} />
+                <MenuHamburguer open={open} setOpen={setOpen} />
+
+                <CardInternHidden open={open} />
+
+
                 <ContentText>
                     <PrincipalText>
                         {name}
@@ -68,7 +70,7 @@ const Card = ({ name, job, img }) => {
                         </SecondText>
                     </PrincipalText>
                 </ContentText>
-            </CardModal>
+            </CardModal >
 
         </>
     )
