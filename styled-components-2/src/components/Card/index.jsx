@@ -34,7 +34,6 @@ const PrincipalText = styled.h1`
     font-weight: bold;
     font-size: 30px;
     color: white;
-
 `
 
 const SecondText = styled.h5`
@@ -45,19 +44,20 @@ const SecondText = styled.h5`
     margin: 2px;
 `
 
-
-const Card = ({ name, job, img, text, github, linkedin }) => {
+const Card = ({ name, job, img, github, linkedin, text }) => {
 
     const [hovered, setHovered] = useState(false);
     const [open, setOpen] = useState(false);
-    const [intern, setIntern] = useState(false);
 
     const desfocus = () => {
         return <img src={img}
             style={{
-                transition: "transform 0.5s ease, filter 0.8s ease",
+                width: "250px",
+                height: "400px",
+                objectFit: "cover",
                 transform: hovered ? "scale(1.1)" : "scale(1)",
-                filter: open ? "blur(5px)" : "none"
+                filter: open ? "blur(5px)" : "none",
+                transition: "transform 0.5s ease, filter 0.8s ease"
             }} />
     }
 
@@ -70,9 +70,9 @@ const Card = ({ name, job, img, text, github, linkedin }) => {
                 <CardInternHidden open={open} name={name} text={text} github={github} linkedin={linkedin} />
                 <ContentText>
                     <PrincipalText>
-                        {name}
+                        {open ? "" : name}
                         <SecondText>
-                            {job}
+                            {open ? "" : job}
                         </SecondText>
                     </PrincipalText>
                 </ContentText>

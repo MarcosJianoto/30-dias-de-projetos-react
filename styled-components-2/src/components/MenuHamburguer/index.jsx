@@ -33,10 +33,10 @@ padding: 5px;
       transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
-
 `
 
 const MenuHamburguer = ({ open, setOpen }) => {
+
   return (
 
     <StyledBurger open={open} onClick={() => setOpen(!open)}>
