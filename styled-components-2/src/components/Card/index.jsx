@@ -46,22 +46,28 @@ const SecondText = styled.h5`
 `
 
 
-const Card = ({ name, job, img }) => {
+const Card = ({ name, job, img, text, github, linkedin }) => {
 
     const [hovered, setHovered] = useState(false);
     const [open, setOpen] = useState(false);
     const [intern, setIntern] = useState(false);
 
+    const desfocus = () => {
+        return <img src={img}
+            style={{
+                transition: "transform 0.5s ease, filter 0.8s ease",
+                transform: hovered ? "scale(1.1)" : "scale(1)",
+                filter: open ? "blur(5px)" : "none"
+            }} />
+    }
+
     return (
         <>
             <CardModal onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} >
 
-                <img src={img} style={{ transition: "transform 0.5s ease", transform: hovered ? "scale(1.1)" : "scale(1)" }} />
+                {desfocus(open)}
                 <MenuHamburguer open={open} setOpen={setOpen} />
-
-                <CardInternHidden open={open} />
-
-
+                <CardInternHidden open={open} name={name} text={text} github={github} linkedin={linkedin} />
                 <ContentText>
                     <PrincipalText>
                         {name}

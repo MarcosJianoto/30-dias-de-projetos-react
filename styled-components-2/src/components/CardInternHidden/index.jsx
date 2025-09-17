@@ -13,13 +13,16 @@ const InternText = styled.div`
 
 `
 
-const CardInternHidden = ({ open }) => {
+const CardInternHidden = ({ open, name, text, github, linkedin }) => {
     return (
         <>
             {open &&
                 (
                     <InternText>
-
+                        {name}
+                        {text}
+                        {github}
+                        {linkedin}
                     </InternText>
 
                 )}

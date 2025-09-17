@@ -24,15 +24,15 @@ function App() {
       <FundoGradiente>
         <GlobalsStyles />
 
-        <Card name={"YINX"} job={"Frontend Developer"} img={OneImage} >
+        <Card name={"YINX"} job={"Frontend Developer"} img={OneImage} text={"texto sobre ele ter um dev full stack ele ter um dev full stack"} github={"marcosjianoto"} linkedin={"marcosjianoto"} >
 
 
         </ Card>
-        <Card name={"SAOX"} job={"Web Designer"} img={TwoImage} >
+        <Card name={"SAOX"} job={"Web Designer"} img={TwoImage} text={"texto sobre ele ter um dev full stack ele ter um dev full stack"} github={"gustavo"} linkedin={"sdggsd"} >
 
 
         </ Card>
-        <Card name={"JANL"} job={"Data Analytics"} img={TreeImage} >
+        <Card name={"JANL"} job={"Data Analytics"} img={TreeImage} text={"texto sobre ele ter um dev full stack ele ter um dev full stack"} github={"523523523"} linkedin={"julio"} >
 
 
         </ Card >
