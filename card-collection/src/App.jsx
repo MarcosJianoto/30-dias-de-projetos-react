@@ -2,8 +2,8 @@ import { styled } from "styled-components"
 import GlobalsStyles from "../../styled-components-2/src/components/GlobalsStyles"
 import Card from "./components/Card"
 import { FaBeer, FaHome, FaUser, FaGithub } from 'react-icons/fa';
-import { MdAlarm, MdFavorite } from 'react-icons/md';
-
+import { MdAlarm, MdFavorite, MdMarkAsUnread, MdMood } from 'react-icons/md';
+import Colors from "./styles/colors.js"
 
 const FundoGradiente = styled.div`
   background: linear-gradient(#0f021d, #000000 );
@@ -35,15 +35,8 @@ function App() {
       <FundoGradiente>
         <GlobalsStyles />
         <QuadMenor>
-          <Card image={< FaHome size={30} color="white" />} title={"e-Commerce"} text={"Build your online store"} />
-          <Card image={< FaHome size={30} color="white" />} title={"e-Commerce"} text={"Facebook & Google ads"} />
-          <Card image={< FaHome size={30} color="white" />} title={"e-Commerce"} text={"Attract more clients"} />
-          <Card image={< FaHome size={30} color="white" />} title={"e-Commerce"} text={"Premium design & visuals"} />
-          <Card image={< FaHome size={30} color="white" />} title={"e-Commerce"} text={"Words that sell"} />
-          <Card image={< FaHome size={30} color="white" />} title={"e-Commerce"} text={"Content for your brand"} />
-          <Card image={< FaHome size={30} color="white" />} title={"e-Commerce"} text={"Grow your business online."} />
-          <Card image={< FaHome size={30} color="white" />} title={"e-Commerce"} text={"Turn more visitors into customers."} />
-
+          <Card image={< FaHome size={30} color={Colors.greenLight} />} title={"e-Commerce"} text={"Build your online store"} color={Colors.greenDark} />
+          <Card image={< FaBeer size={30} color={Colors.orangeLight} />} title={"Graphic design"} text={"Premium design & visuals."} color={Colors.orangeDark} />
         </QuadMenor>
 
       </FundoGradiente >
