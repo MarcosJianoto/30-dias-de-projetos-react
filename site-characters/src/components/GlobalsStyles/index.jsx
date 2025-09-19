@@ -2,6 +2,12 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalsStyles = createGlobalStyle`
 
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 html {
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
