@@ -5,10 +5,11 @@ import { FaBeer, FaHome, FaUser, FaGithub } from 'react-icons/fa';
 import { MdAlarm, MdFavorite, MdMarkAsUnread, MdMood } from 'react-icons/md';
 import Colors from "./styles/colors.js"
 import Sidebar from "./components/Sidebar/index.jsx";
-import Main from "./components/Main/index.jsx";
+import Introduction from "./components/Introduction/index.jsx";
+import FitaNewCharacter from "./components/FitaNewCharacter/index.jsx";
 
 const FundoGradiente = styled.div`
-  background: linear-gradient(#94bbd3, #3a5379 );
+  background: linear-gradient(#273852 ,#1d8488, #3a5379 );
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -26,6 +27,14 @@ const SidebarPosition = styled.div`
     top: 50px;
 `
 
+const MainPosition = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+
 function App() {
 
   return (
@@ -37,10 +46,12 @@ function App() {
           <Sidebar />
         </SidebarPosition>
 
-        <Main>
+        <MainPosition>
+          <Introduction />
+          <FitaNewCharacter />
 
+        </MainPosition>
 
-        </Main>
 
       </FundoGradiente >
     </>
