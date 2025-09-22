@@ -5,9 +5,10 @@ import { FaBeer, FaHome, FaUser, FaGithub } from 'react-icons/fa';
 import { MdAlarm, MdFavorite, MdMarkAsUnread, MdMood } from 'react-icons/md';
 import Colors from "./styles/colors.js"
 import Sidebar from "./components/Sidebar/index.jsx";
+import Main from "./components/Main/index.jsx";
 
 const FundoGradiente = styled.div`
-  background: linear-gradient(#fdfae7, #303338 );
+  background: linear-gradient(#94bbd3, #3a5379 );
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -36,6 +37,10 @@ function App() {
           <Sidebar />
         </SidebarPosition>
 
+        <Main>
+
+
+        </Main>
 
       </FundoGradiente >
     </>

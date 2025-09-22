@@ -29,12 +29,27 @@ const UlSidebar = styled.ul`
     }
 `
 
-const ContactPosition = styled.ul`
+const ContactPosition = styled.div`
     list-style-type: none;
     display: flex;
     position: absolute;
     right: 10px;
-    gap: 30px;
+    gap: 30px; 
+`
+
+const CPButton = styled.button`
+    margin-top: 10px;
+    border: 1.5px solid white ;
+    border-radius: 30px;
+    padding: 5px 20px;
+    background-color: #94bbd3 ;
+    color: white;
+
+    &:hover{
+        color: #94bbd3;
+        background-color: white;
+        cursor: pointer;
+    }
 `
 
 
@@ -42,16 +57,17 @@ const Sidebar = () => {
     return (
         <SquareSidebar>
             <Header>
-                MARCOS JIANOTO
+                Header
             </Header>
             <UlSidebar>
-                <li>HOME</li>
-                <li>LANGUAGENS</li>
-                <li>PROJECTS</li>
+                <li>Profile</li>
+                <li>Character</li>
+                <li>Game</li>
             </UlSidebar>
             <ContactPosition>
-                <li>ABOUT ME</li>
-                <li>CONTACT</li>
+
+                <CPButton>Search</CPButton>
+                <CPButton>For more info</CPButton>
             </ContactPosition>
         </SquareSidebar>
     )
