@@ -1,10 +1,13 @@
 import styled from "styled-components"
 
 const MainContainer = styled.h1`
+    display: flex;
+    flex-direction: column;
     font-size: 30px;
     text-align: center;
-    position: relative;
     height: 90vh;
+    align-items: center;
+    justify-content: center;
 `
 
 
@@ -17,6 +20,7 @@ const CardPhoto = styled.div`
     border-radius: 20px;
     margin: 0 auto;
     padding: 0;
+    position: relative;
     background: radial-gradient( #7cb7b9, #4d8183) ;
 
 
