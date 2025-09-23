@@ -2,7 +2,7 @@ import styled from "styled-components"
 import Logo from "../../assets/img/logo_marcosjianoto.jpg"
 
 const PrincipalMain = styled.header`
-    border: 1px solid white;
+    min-height: 90vh;
     display: flex;
     align-items: center ;
     justify-content: center;
