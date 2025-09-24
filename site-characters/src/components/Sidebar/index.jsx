@@ -44,11 +44,14 @@ const CPButton = styled.button`
     padding: 5px 20px;
     background-color: #94bbd3 ;
     color: white;
+    transition: all 0.5s ease-in-out;
 
     &:hover{
         color: #94bbd3;
         background-color: white;
         cursor: pointer;
+        transform: scale(1.15);
+        
     }
 `
 

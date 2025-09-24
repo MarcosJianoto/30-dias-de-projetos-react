@@ -1,60 +1,100 @@
 import styled from "styled-components"
 
-const MainContainer = styled.h1`
-    display: flex;
-    flex-direction: column;
-    font-size: 30px;
-    text-align: center;
-    height: 90vh;
-    align-items: center;
-    justify-content: center;
-`
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;        // deixa o slide controlar a largura
+  max-width: 250px;   // evita ficar gigante
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+
+  border: ${(props) =>
+        props.selected ? "1px solid gray" : "1px solid transparent"};
+`;
+
 
 
 const CardPhoto = styled.div`
+  display: flex;
+  height: 35vh;
+  width: 100%;       // importante para o slider
+  position: relative;
+  background: radial-gradient(#2099AA, #4d8183);
+  transition: all 0.5s ease-in-out;
 
-    display: flex;
-    height: 35vh;
-    width: 20vw;
-    border: 1px solid white;
-    border-radius: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+const CardImage = styled.img`
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+
+    ${CardPhoto}:hover & {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+`
+
+
+const LyrycsPhotoContainer = styled.div`
+  height: 6vh;
+  width: 100%;       // importante para alinhar com o CardPhoto
+  position: absolute;
+  bottom: 0;
+  background: radial-gradient(#2099AA, #11626d);
+  opacity: 97%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+
+const NameCharacter = styled.h3`
+    font-size: 25px;   
     margin: 0 auto;
     padding: 0;
-    position: relative;
-    background: radial-gradient( #7cb7b9, #4d8183) ;
 
-
+    text-shadow: 1px 1px 2px black;
 `
-const LyrycsPhotoContainer = styled.div`
+const TitleCharacter = styled.h4`
+    font-size: 13px;   
+    margin: 0 auto;
+    padding: 0;
 
-    height: 7vh;
-    width: 20vw;
-    border: 1px solid white;
-    border-radius:0px 0px 20px 20px;
-    position: absolute;
-    bottom: 0px;
-    background: radial-gradient( #7cb7b9, #4d7e80) ;
-
-
+    text-shadow: 1px 1px 2px black;
 `
 
-
-const Card = ({ img, name, title }) => {
+const Card = ({ img, name, title, selected = true }) => {
     return (
-        <MainContainer>
-
-            Character to play
-
+        <CardContainer selected={selected} >
             <CardPhoto>
+                <CardImage src={img} alt={name} />
                 <LyrycsPhotoContainer>
-
-
+                    <NameCharacter>{name}</NameCharacter>
+                    <TitleCharacter>{selected ? title : ""}</TitleCharacter>
                 </LyrycsPhotoContainer>
-
             </CardPhoto>
+        </CardContainer>
+    );
+};
 
-        </MainContainer>
-    )
-}
 
 export default Card

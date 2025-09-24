@@ -38,7 +38,6 @@ const Paragraph = styled.p`
 
 const BlockButtonsMain = styled.div`
     display: flex;
-    border: 1px solid white;
     font-size: 20px;
     margin: 0 auto;
     gap: 35px;
@@ -54,11 +53,13 @@ const PTButton = styled.button`
     padding: 5px 20px;
     background-color: #94bbd3 ;
     color: white;
+    transition: all 0.5s ease-in-out;
 
     &:hover{
         color: #ffffff;
         background-color: #203c4d;
         cursor: pointer;
+        transform: scale(1.20);
     }
 `
 
