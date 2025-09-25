@@ -2,7 +2,7 @@
 
 import styled from "styled-components"
 import GlobalStyles from "./components/GlobalsStyles"
-import Background from "./assets/1.webp"
+import Background from "./assets/wallpaper.webp"
 import Menu from "./components/Menu"
 import Carousel from "./components/Carousel"
 import CardsImage from "./components/CardsImage"

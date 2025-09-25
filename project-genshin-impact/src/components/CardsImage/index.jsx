@@ -1,4 +1,7 @@
 import styled from "styled-components"
+import One from "../../assets/one.jpg"
+import Two from "../../assets/two.jpg"
+
 
 import Card from "./Card"
 
@@ -54,8 +57,8 @@ const CardsImage = () => {
                 </TitleArts>
 
                 <SpaceCard>
-                    <Card />
-                    <Card />
+                    <Card img={One} />
+                    <Card img={Two} />
                 </SpaceCard>
 
                 <TitleArts>
