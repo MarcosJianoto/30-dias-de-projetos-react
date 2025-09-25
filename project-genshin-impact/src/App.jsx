@@ -5,6 +5,7 @@ import GlobalStyles from "./components/GlobalsStyles"
 import Background from "./assets/1.webp"
 import Menu from "./components/Menu"
 import Carousel from "./components/Carousel"
+import CardsImage from "./components/CardsImage"
 
 const BackgroundImg = styled.div`
   width: 100vw;
@@ -22,7 +23,19 @@ const ContainerPrincipal = styled.div`
   height: 99vh;
   border: 1px solid white;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  gap: 50px;
+  `
+
+const Main = styled.div`
+  width: 80vh;
+  height: 99vh;
+  border: 2px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 `
 
 
@@ -36,9 +49,13 @@ function App() {
       <GlobalStyles />
 
       <ContainerPrincipal>
-        <Menu />
-        <Carousel />
 
+        <Menu />
+
+        <Main>
+          <Carousel />
+          <CardsImage />
+        </Main>
 
       </ContainerPrincipal>
 
