@@ -1,27 +1,75 @@
 import styled from "styled-components"
-import { MdFavorite, MdAdd } from "react-icons/md";
+
+import Card from "./Card"
 
 
-const Carousel = styled.header`
+const Section = styled.section`
     display: flex;
-    border: 1px solid red;
-    border-radius: 40px;
-    height: 30%;
+    border: 1px solid green;
+    height: 40%;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
     `
 
+const SpaceCard = styled.div`
+    display: flex;
+    gap: 20px;
+`
 
-const Menu = () => {
+const ContainerCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+`
+
+const TitleArts = styled.h3`
+
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+
+    button{
+
+        border: 1px solid black;
+        border-radius: 15px;
+        padding: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+
+
+`
+
+const CardsImage = () => {
     return (
 
-        <Carousel>
+        <Section>
+            <ContainerCard>
+                <TitleArts>
+                    Artworks &gt;
+                </TitleArts>
 
-        </Carousel>
+                <SpaceCard>
+                    <Card />
+                    <Card />
+                </SpaceCard>
+
+                <TitleArts>
+                    <button>View more</button>
+                </TitleArts>
+
+
+            </ContainerCard>
+
+
+
+        </Section>
 
     )
 }
 
-export default Menu
+export default CardsImage
