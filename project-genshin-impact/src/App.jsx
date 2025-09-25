@@ -4,7 +4,7 @@ import styled from "styled-components"
 import GlobalStyles from "./components/GlobalsStyles"
 import Background from "./assets/1.webp"
 import Menu from "./components/Menu"
-import Main from "./components/Main"
+import Carousel from "./components/Carousel"
 
 const BackgroundImg = styled.div`
   width: 100vw;
@@ -37,7 +37,7 @@ function App() {
 
       <ContainerPrincipal>
         <Menu />
-        <Main />
+        <Carousel />
 
 
       </ContainerPrincipal>
