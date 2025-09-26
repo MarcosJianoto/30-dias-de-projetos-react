@@ -8,12 +8,11 @@ import Search from "../Search"
 
 import Card from "./Card"
 import Chibi from "./Chibi"
+import CardElements from "./CardElements"
 
 
 const Section = styled.section`
     display: flex;
-    border: 1px solid green;
-    height: 40%;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -31,6 +30,7 @@ const ContainerCard = styled.div`
     flex-direction: column;
     gap: 10px;
     padding: 0;
+    justify-content: center;
 `
 
 const TitleArts = styled.h3`
@@ -41,7 +41,6 @@ const TitleArts = styled.h3`
 
     button{
 
-        border: 1px solid black;
         border-radius: 15px;
         padding: 5px;
         width: 100%;
@@ -57,7 +56,6 @@ const RecenteSearches = styled.h5`
 
     button{
 
-        border: 1px solid black;
         border-radius: 15px;
         padding: 5px;
         width: 100%;
@@ -69,7 +67,6 @@ const RecenteSearches = styled.h5`
 const ContainerSearch = styled.div`
     height: 100%;
     width: 200px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -81,7 +78,6 @@ const ContainerSearch = styled.div`
 const ContainerChibis = styled.div`
     height: 100%;
     width: 150px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -93,12 +89,13 @@ const ContainerChibis = styled.div`
 const ContainerWhatever = styled.div`
     height: 100%;
     width: 300px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 0;
     align-items: center;
+    justify-content: center;
+
 
 `
 
@@ -139,7 +136,9 @@ const CardsImage = () => {
             </ContainerChibis>
 
             <ContainerWhatever>
-                teste
+                <CardElements img={TwoChibi} title={"Element Ameno"} text={"No universo de Genshin Impact, cada personagem possui um Elemento único, como Pyro, Hydro ou Anemo, que  estratégias cada combate dinâmico e criativo."} />
+                <CardElements img={TwoChibi} title={"Element Ameno"} text={"No universo de Genshin Impact, cada personagem possui um Elemento único, como Pyro, Hydro ou Anemo, que  estratégias cada combate dinâmico e criativo."} />
+                <CardElements img={TwoChibi} title={"Element Ameno"} text={"No universo de Genshin Impact, cada personagem possui um Elemento único, como Pyro, Hydro ou Anemo, que  estratégias cada combate dinâmico e criativo."} />
             </ContainerWhatever>
 
         </Section>

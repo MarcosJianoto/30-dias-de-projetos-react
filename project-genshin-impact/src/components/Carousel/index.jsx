@@ -5,7 +5,7 @@ import { MdFavorite, MdAdd } from "react-icons/md";
 const Carousel = styled.header`
     display: flex;
     border-radius: 40px;
-    height: 30%;
+    height: 50%;
     width: 100%;
     justify-content: space-between;
     align-items: center;

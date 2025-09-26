@@ -4,7 +4,6 @@ import { MdFavorite, MdAdd } from "react-icons/md";
 
 const MenuContainer = styled.header`
     display: flex;
-    border: 1px solid white;
     height: 8vh;
     width: 100vh;
     justify-content: space-between;

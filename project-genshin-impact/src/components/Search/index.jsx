@@ -5,7 +5,6 @@ import { MdSearch } from "react-icons/md";
 
 const SearchButton = styled.section`
     display: flex;
-    border: 2px solid #b9b9b9;
     border-radius: 10px;
     height: 10%;
     width: 100%;

@@ -3,7 +3,6 @@ import { MdAdd } from "react-icons/md";
 
 const CardChibi = styled.section`
     display: flex;
-    border: 2px solid #b9b9b9;
     border-radius: 25px;
     height: 130px;
     width: 130px;
@@ -25,7 +24,6 @@ const ContainerChibi = styled.div`
     align-items: center;
     height: 160px;
     width: 160px;
-    border: 1px solid green;
     position: relative;
 `
 
@@ -34,7 +32,6 @@ const Circle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     border-radius: 100%;
     background-color: white;
     width: 40px;

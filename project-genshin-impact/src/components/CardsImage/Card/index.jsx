@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const CardMain = styled.section`
     display: flex;
-    border: 2px solid #b9b9b9;
     border-radius: 25px;
     height: 200px;
     width: 130px;
