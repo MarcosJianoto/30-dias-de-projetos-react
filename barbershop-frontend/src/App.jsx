@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalsStyles from './components/GlobalsStyles'
 import styled from 'styled-components'
@@ -18,7 +17,6 @@ const AppContainer = styled.div`
 `
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <BrowserRouter>
