@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { MdHistory, MdOutlineSmsFailed } from 'react-icons/md';
+import { MdNotifications, MdNotificationsOff, MdNotificationImportant } from 'react-icons/md';
 import FotoProfile from "../../assets/foto.png"
 
 
@@ -20,13 +20,12 @@ const TitleCards = styled.h3`
     align-items: center;
     justify-content: center;
     border: 1px solid blue;
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     margin-right: 10px;
 `
 const ImgProfile = styled.div`
     display: flex;
-    border: 1px solid green;
     justify-content: center;
     align-items: center;
     
@@ -42,7 +41,7 @@ const CardCalendar = () => {
     return (
         <ContainerMain >
             <TitleCards>
-                <MdHistory size={40} />
+                <MdNotifications size={38} />
             </TitleCards>
             <ImgProfile>
                 <img src={FotoProfile} />
