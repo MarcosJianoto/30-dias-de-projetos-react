@@ -2,11 +2,18 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalsStyles = createGlobalStyle`
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
 html, body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: bold;
   color: #ffffff;
+  height: 100%;
+  width: 100%;
 }
 
 html {

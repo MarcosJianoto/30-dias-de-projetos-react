@@ -9,10 +9,9 @@ const ContainerSidebar = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 40px;
-    height: 95vh;
-    width: 25vw;
+    height: 100%;
+    width: 25%;
     background-color: #111111;
-    padding: 15px;
     `
 const Header = styled.header`
     display: flex;
@@ -28,14 +27,14 @@ const IconWolf = styled(GiWolfHowl)`
 `;
 
 const ContainerInternTop = styled.div`
+    flex: 1;
     display: flex;
     flex-direction: column;
-    height: 95vh;
     padding-top: 20px;
 ` ;
 
 const ContainerInternBotoom = styled.div`
-    display: flex;
+    flex-shrink: 0;
     margin-bottom: 5vh;
 ` ;
 

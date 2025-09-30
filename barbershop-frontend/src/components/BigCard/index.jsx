@@ -26,7 +26,7 @@ const NumbersSummary = styled.h1`
 `
 
 
-const MinorCard = () => {
+const BigCard = () => {
     return (
         <ContainerMain >
             <TitleCards>
@@ -39,4 +39,4 @@ const MinorCard = () => {
     )
 }
 
-export default MinorCard
+export default BigCard

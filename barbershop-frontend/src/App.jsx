@@ -7,13 +7,14 @@ import Products from './pages/Dashboard';
 import History from './pages/Dashboard';
 
 const AppContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-color: #0A0A0A;
   display: flex;
-  justify-content: center;
+  overflow: hidden;
+  background-color: #0A0A0A;
   align-items: center;
-  gap: 2vw;
+  margin: 0 auto;
+  padding: 0;
 `
 
 function App() {
