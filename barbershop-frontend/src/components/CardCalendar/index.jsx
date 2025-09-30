@@ -5,12 +5,12 @@ import { MdHistory, MdOutlineSmsFailed } from 'react-icons/md';
 const ContainerMain = styled.div`
     background-color: #1B1B1B;
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 40px;
     height: 100%;
-    width: 48%;
     border: 1px solid white;
     padding: 15px;
 `
@@ -27,7 +27,7 @@ const NumbersSummary = styled.h1`
 `
 
 
-const BigCard = () => {
+const CardCalendar = () => {
     return (
         <ContainerMain >
             <TitleCards>
@@ -40,4 +40,4 @@ const BigCard = () => {
     )
 }
 
-export default BigCard
+export default CardCalendar

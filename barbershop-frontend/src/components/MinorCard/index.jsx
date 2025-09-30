@@ -3,6 +3,7 @@ import { MdHistory, MdOutlineSmsFailed } from 'react-icons/md';
 
 
 const ContainerMain = styled.div`
+    background-color: #1B1B1B;
     display: flex;
     flex-direction: column;
     justify-content: center;
