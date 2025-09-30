@@ -19,8 +19,8 @@ const ContainerMain = styled.div`
 const ContainerMenuAndNotifications = styled.div`
     display: flex;
     border-radius: 40px 40px 0 0;
-    height: 10vh;
-    justify-content: space-between;
+    height: 5vh;
+    justify-content: center;
     align-items: center;
 `
 const ContainerMinorCard = styled.div`
