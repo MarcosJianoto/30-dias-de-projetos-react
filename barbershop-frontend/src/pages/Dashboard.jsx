@@ -3,6 +3,7 @@ import { MdHistory, MdOutlineSmsFailed } from 'react-icons/md';
 import MinorCard from '../components/MinorCard'
 import BigCard from "../components/BigCard";
 import CardCalendar from "../components/CardCalendar";
+import CardUpperProfile from "../components/CardUpperProfile";
 
 const ContainerMain = styled.div`
     border: 1px solid blue;
@@ -46,7 +47,7 @@ const Dashboard = () => {
     return (
         <ContainerMain>
             <ContainerMenuAndNotifications>
-                testando 123
+                <CardUpperProfile />
             </ContainerMenuAndNotifications>
             <ContainerMinorCard>
                 <MinorCard />

@@ -10,7 +10,7 @@ const ContainerMain = styled.div`
     align-items: center;
     border-radius: 40px;
     height: 100%;
-    width: 48%;
+    width: 49%;
     padding: 15px;
 `
 const TitleCards = styled.h3`

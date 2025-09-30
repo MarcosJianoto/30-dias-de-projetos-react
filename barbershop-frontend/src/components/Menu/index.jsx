@@ -10,7 +10,7 @@ const ContainerSidebar = styled.div`
     flex-direction: column;
     border-radius: 40px;
     height: 100%;
-    width: 25%;
+    width: 20%;
     background-color: #1B1B1B;
     `
 const Header = styled.header`
