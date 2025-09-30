@@ -5,11 +5,12 @@ import BigCard from "../components/BigCard";
 import CardCalendar from "../components/CardCalendar";
 
 const ContainerMain = styled.div`
+    border: 1px solid blue;
     display: flex;
     flex-direction: column;
     border-radius: 40px;
     height: 100%;
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     padding:0 ;
     gap: 20px;

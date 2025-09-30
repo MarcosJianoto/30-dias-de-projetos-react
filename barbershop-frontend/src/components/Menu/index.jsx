@@ -11,7 +11,7 @@ const ContainerSidebar = styled.div`
     border-radius: 40px;
     height: 100%;
     width: 25%;
-    background-color: #111111;
+    background-color: #1B1B1B;
     `
 const Header = styled.header`
     display: flex;

@@ -6,16 +6,26 @@ import Dashboard from './pages/Dashboard';
 import Products from './pages/Dashboard';
 import History from './pages/Dashboard';
 
-const AppContainer = styled.div`
-  width: 100%;
-  height: 100vh;
+// Container geral da página
+const PageContainer = styled.div`
   display: flex;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background-color: #0A0A0A;
-  align-items: center;
-  margin: 0 auto;
-  padding: 0;
-`
+  border: 1px solid red;
+  padding: 20px;
+  `;
+
+// Container do conteúdo principal (Dashboard, Products, etc.)
+const ContentContainer = styled.div`
+  border: 1px solid red;
+  flex: 1; // ocupa todo espaço restante
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  overflow-y: auto; // scroll apenas no conteúdo se necessário
+`;
 
 function App() {
 
@@ -23,15 +33,17 @@ function App() {
     <BrowserRouter>
       <GlobalsStyles />
 
-      <AppContainer>
+      <PageContainer>
         <Menu />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/settings" element={<History />} />
-        </Routes>
-      </AppContainer>
+        <ContentContainer>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/settings" element={<History />} />
+          </Routes>
+        </ContentContainer>
+      </PageContainer>
 
     </BrowserRouter>
   )

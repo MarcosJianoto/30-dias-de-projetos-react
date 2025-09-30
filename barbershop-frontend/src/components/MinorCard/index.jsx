@@ -11,7 +11,6 @@ const ContainerMain = styled.div`
     border-radius: 40px;
     height: 15vh;
     width: 20vh;
-    border: 1px solid white;
     padding: 15px;
 `
 const TitleCards = styled.h3`
