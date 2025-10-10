@@ -9,7 +9,7 @@ const ContainerMain = styled.div`
     border: 1px solid blue;
     display: flex;
     flex-direction: column;
-    border-radius: 40px;
+    border-radius: 20px;
     height: 100%;
     width: 100%;
     margin: 0 auto;
@@ -18,7 +18,7 @@ const ContainerMain = styled.div`
     `
 const ContainerMenuAndNotifications = styled.div`
     display: flex;
-    border-radius: 40px 40px 0 0;
+    border-radius: 20px 20px 0 0;
     height: 5vh;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@ const Calendar = styled.div`
 `
 const ContainerBigCard = styled.div`
     display: flex;
-    border-radius: 0 0 40px 40px;
+    border-radius: 0 0 20px 20px;
     flex: 1;
     justify-content: space-between;
     align-items: center;

@@ -47,11 +47,12 @@ const Sidebar = styled.ul`
     gap: 40px;
 `
 const SidebarLink = styled(NavLink)`
+    width: 95%;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     padding: 5px 8px;
-    border-radius: 10px;
+    border-radius: 15px;
     color: white;
     text-decoration: none;
     transition: 0.3s;

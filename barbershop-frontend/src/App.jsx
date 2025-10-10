@@ -3,8 +3,9 @@ import GlobalsStyles from './components/GlobalsStyles'
 import styled from 'styled-components'
 import Menu from './components/Menu'
 import Dashboard from './pages/Dashboard';
-import Products from './pages/Dashboard';
-import History from './pages/Dashboard';
+import Products from './pages/Products';
+import History from './pages/History';
+import Settings from './pages/Settings';
 
 // Container geral da página
 const PageContainer = styled.div`
@@ -13,17 +14,15 @@ const PageContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   background-color: #0A0A0A;
-  border: 1px solid red;
   padding: 20px;
   `;
 
 // Container do conteúdo principal (Dashboard, Products, etc.)
 const ContentContainer = styled.div`
-  border: 1px solid red;
   flex: 1; // ocupa todo espaço restante
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  padding: 0 0 0 20px;
   overflow-y: auto; // scroll apenas no conteúdo se necessário
 `;
 
@@ -40,7 +39,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/products" element={<Products />} />
             <Route path="/history" element={<History />} />
-            <Route path="/settings" element={<History />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </ContentContainer>
       </PageContainer>
