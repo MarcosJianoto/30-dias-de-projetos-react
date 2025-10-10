@@ -5,6 +5,7 @@ import Menu from './components/Menu'
 import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
 import History from './pages/History';
+import Services from './pages/Services';
 import Settings from './pages/Settings';
 
 // Container geral da página
@@ -39,6 +40,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/products" element={<Products />} />
             <Route path="/history" element={<History />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </ContentContainer>

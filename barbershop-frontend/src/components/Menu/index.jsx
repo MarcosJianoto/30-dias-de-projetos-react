@@ -8,7 +8,7 @@ const ContainerSidebar = styled.div`
     font-size: 20px;
     display: flex;
     flex-direction: column;
-    border-radius: 40px;
+    border-radius: 20px;
     height: 100%;
     width: 20%;
     background-color: #1B1B1B;
@@ -93,6 +93,12 @@ const Menu = () => {
                     <li>
                         <SidebarLink to="/history">
                             <MdHistory size={30} />History
+                        </SidebarLink>
+
+                    </li>
+                    <li>
+                        <SidebarLink to="/services">
+                            <MdHistory size={30} />Services
                         </SidebarLink>
 
                     </li>

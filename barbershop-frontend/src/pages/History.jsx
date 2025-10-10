@@ -11,10 +11,20 @@ const ContainerMain = styled.div`
     padding: 15px;
     `
 
+const ContainerCreateNewService = styled.h1`
+    
+
+`
+
 
 const History = () => {
     return (
-        <ContainerMain></ContainerMain>
+        <ContainerMain>
+
+
+
+
+        </ContainerMain>
     )
 }
 
