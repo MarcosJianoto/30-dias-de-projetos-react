@@ -1,0 +1,34 @@
+ ⚙️ Settings (Configurações do Sistema)
+
+1. Barbers (Barbeiros)
+→ Gerenciar informações dos barbeiros:
+
+Nome, especialidades, horários disponíveis.
+
+Comissão, status (ativo/inativo).
+
+Opção de vincular barbeiro à agenda principal.
+
+
+
+2. Notifications (Notificações)
+→ Configurações relacionadas a alertas e comunicações:
+
+Ativar/desativar envio de notificações automáticas (ex: lembrete de agendamento).
+
+Mensagens personalizadas (“Seu corte é amanhã às 14h”).
+
+Integração futura com WhatsApp ou e-mail.
+
+
+
+3. Agenda / Scheduling (Agendamento Geral)
+→ Configurações da agenda do sistema:
+
+Intervalo padrão entre cortes (ex: 30 min).
+
+Horário de funcionamento da barbearia.
+
+Dias de folga / feriados.
+
+Quantos atendimentos simultâneos podem ocorrer.

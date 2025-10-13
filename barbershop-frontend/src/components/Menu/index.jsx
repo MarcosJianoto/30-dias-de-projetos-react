@@ -10,7 +10,7 @@ const ContainerSidebar = styled.div`
     flex-direction: column;
     border-radius: 5px;
     height: 100%;
-    width: 20%;
+    width: 22%;
     background-color: #1B1B1B;
     `
 const Header = styled.header`
@@ -87,18 +87,12 @@ const Menu = () => {
                     </li>
                     <li>
                         <SidebarLink to="/products">
-                            <MdAllInbox size={30} />Products
+                            <MdAllInbox size={30} />Products/Services
                         </SidebarLink>
                     </li>
                     <li>
                         <SidebarLink to="/history">
                             <MdHistory size={30} />History
-                        </SidebarLink>
-
-                    </li>
-                    <li>
-                        <SidebarLink to="/services">
-                            <MdHistory size={30} />Services
                         </SidebarLink>
 
                     </li>
