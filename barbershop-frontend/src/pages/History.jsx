@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import {
     Box,
     Typography,
@@ -12,10 +13,19 @@ import {
     Chip,
     IconButton,
     Button,
-    Stack
+    Stack,
+    CssBaseline
 } from "@mui/material";
 
+
+
 import { Visibility, Add } from "@mui/icons-material";
+
+const darkTheme = createTheme({
+    palette: {
+        mode: 'dark',
+    },
+});
 
 const ContainerMain = styled.div`
     display: flex;
@@ -23,7 +33,6 @@ const ContainerMain = styled.div`
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid red;
     `
 
 const ContainerMenuHistory = styled.h1`
@@ -63,8 +72,7 @@ const getStatusColor = (status) => {
 
 const History = () => {
     return (
-        <ContainerMain>
-
+        <ContainerMain theme={darkTheme}>
             <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
                 <Table stickyHeader>
                     <TableHead>
@@ -91,8 +99,6 @@ const History = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-
-
         </ContainerMain >
     )
 }
