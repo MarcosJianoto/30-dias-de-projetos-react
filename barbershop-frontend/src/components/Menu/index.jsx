@@ -86,7 +86,7 @@ const Menu = () => {
                         </SidebarLink>
                     </li>
                     <li>
-                        <SidebarLink to="/products">
+                        <SidebarLink to="/services">
                             <MdAllInbox size={30} />Products/Services
                         </SidebarLink>
                     </li>
