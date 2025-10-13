@@ -8,7 +8,7 @@ const ContainerMain = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 5px;
     height: 100%;
     width: 22.5vh;
     padding: 15px;

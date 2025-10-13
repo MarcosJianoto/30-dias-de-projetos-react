@@ -7,7 +7,7 @@ const ContainerButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 250px;
     height: 40px;
     padding: 15px;

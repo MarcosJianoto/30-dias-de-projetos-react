@@ -19,13 +19,11 @@ import { Visibility, Add } from "@mui/icons-material";
 
 const ContainerMain = styled.div`
     display: flex;
-    border-radius: 40px;
     height: 100%;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     border: 1px solid red;
-    padding: 15px;
     `
 
 const ContainerMenuHistory = styled.h1`
@@ -36,6 +34,20 @@ const historyData = [
     { id: 1, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
     { id: 2, service: "Barba", barber: "Pedro", value: 25.00, date: "08/10/2025", status: "Cancelado" },
     { id: 3, service: "Sobrancelha", barber: "Lucas", value: 15.00, date: "05/10/2025", status: "Concluído" },
+    { id: 4, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
+    { id: 2, service: "Barba", barber: "Pedro", value: 25.00, date: "08/10/2025", status: "Cancelado" },
+    { id: 3, service: "Sobrancelha", barber: "Lucas", value: 15.00, date: "05/10/2025", status: "Concluído" },
+    { id: 1, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
+    { id: 2, service: "Barba", barber: "Pedro", value: 25.00, date: "08/10/2025", status: "Cancelado" },
+    { id: 3, service: "Sobrancelha", barber: "Lucas", value: 15.00, date: "05/10/2025", status: "Concluído" },
+    { id: 1, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
+    { id: 2, service: "Barba", barber: "Pedro", value: 25.00, date: "08/10/2025", status: "Cancelado" },
+    { id: 3, service: "Sobrancelha", barber: "Lucas", value: 15.00, date: "05/10/2025", status: "Concluído" },
+    { id: 1, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
+    { id: 1, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
+    { id: 1, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
+    { id: 1, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
+    { id: 10, service: "Corte de Cabelo", barber: "João", value: 35.00, date: "10/10/2025", status: "Concluído" },
 ];
 
 const getStatusColor = (status) => {
@@ -53,8 +65,8 @@ const History = () => {
     return (
         <ContainerMain>
 
-            <TableContainer component={Paper}>
-                <Table>
+            <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
+                <Table stickyHeader>
                     <TableHead>
                         <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
                             <TableCell sx={{ fontWeight: 'bold' }}>Id</TableCell>
@@ -68,7 +80,7 @@ const History = () => {
                     <TableBody>
                         {historyData.map((item) => (
                             <TableRow key={item.id}>
-                                <TableCell>{item.id}</TableCell>
+                                <TableCell sx={{ width: 20 }}>{item.id}</TableCell>
                                 <TableCell>{item.service} </TableCell>
                                 <TableCell>{item.barber}</TableCell>
                                 <TableCell>{item.value}</TableCell>

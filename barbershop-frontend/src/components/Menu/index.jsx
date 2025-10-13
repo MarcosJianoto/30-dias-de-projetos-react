@@ -8,7 +8,7 @@ const ContainerSidebar = styled.div`
     font-size: 20px;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 5px;
     height: 100%;
     width: 20%;
     background-color: #1B1B1B;
@@ -52,7 +52,7 @@ const SidebarLink = styled(NavLink)`
     align-items: center;
     gap: 15px;
     padding: 5px 8px;
-    border-radius: 15px;
+    border-radius: 5px;
     color: white;
     text-decoration: none;
     transition: 0.3s;

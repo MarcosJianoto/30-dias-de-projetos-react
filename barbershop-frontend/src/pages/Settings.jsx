@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const ContainerMain = styled.div`
     display: flex;
-    border-radius: 40px;
+    border-radius: 5px;
     height: 100%;
     width: 100%;
     justify-content: center;
@@ -13,7 +13,7 @@ const ContainerMain = styled.div`
 
 const ContainerIntern = styled.div`
     display: flex;
-    border-radius: 40px;
+    border-radius: 5px;
     height: 100%;
     width: 70%;
     justify-content: space-between;

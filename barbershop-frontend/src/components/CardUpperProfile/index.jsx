@@ -9,7 +9,7 @@ const ContainerMain = styled.div`
     flex: 1;
     justify-content: end;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 5px;
     height: 100%;
     border: 1px solid red;
 `
