@@ -33,7 +33,7 @@ const ContainerInternTop = styled.div`
     padding-top: 20px;
 ` ;
 
-const ContainerInternBotoom = styled.div`
+const ContainerInternBottom = styled.div`
     flex-shrink: 0;
     margin-bottom: 5vh;
 ` ;
@@ -87,7 +87,12 @@ const Menu = () => {
                     </li>
                     <li>
                         <SidebarLink to="/services">
-                            <MdAllInbox size={30} />Products/Services
+                            <MdAllInbox size={30} />Services
+                        </SidebarLink>
+                    </li>
+                    <li>
+                        <SidebarLink to="/products">
+                            <MdAllInbox size={30} />Products
                         </SidebarLink>
                     </li>
                     <li>
@@ -98,7 +103,7 @@ const Menu = () => {
                     </li>
                 </Sidebar>
             </ContainerInternTop>
-            <ContainerInternBotoom>
+            <ContainerInternBottom>
                 <Sidebar>
                     <li>
                         <SidebarLink to="/settings">
@@ -106,7 +111,7 @@ const Menu = () => {
                         </SidebarLink>
                     </li>
                 </Sidebar>
-            </ContainerInternBotoom>
+            </ContainerInternBottom>
         </ContainerSidebar>
     )
 }

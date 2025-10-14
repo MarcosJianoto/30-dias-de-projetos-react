@@ -5,6 +5,7 @@ import Menu from './components/Menu'
 import Dashboard from './pages/Dashboard';
 import History from './pages/History';
 import Services from './pages/Services';
+import Products from './pages/Products';
 import Settings from './pages/Settings';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -50,6 +51,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/history" element={<History />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/Products" element={<Products />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>
           </ContentContainer>

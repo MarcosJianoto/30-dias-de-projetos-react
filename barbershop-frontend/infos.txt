@@ -32,3 +32,46 @@ Horário de funcionamento da barbearia.
 Dias de folga / feriados.
 
 Quantos atendimentos simultâneos podem ocorrer.
+
+
+
+ORGANIZAR AS PASTAS 
+
+src/
+├── assets/
+│   └── foto.png
+│
+├── components/
+│   ├── common/              ← componentes genéricos (usados em várias telas)
+│   │   ├── ButtonStandard/
+│   │   │   └── index.jsx
+│   │   ├── Card/
+│   │   │   └── index.jsx
+│   │   └── Table/
+│   │       └── index.jsx
+│   │
+│   ├── dashboard/           ← componentes específicos do dashboard
+│   │   ├── BigCard/
+│   │   │   └── index.jsx
+│   │   └── SmallCard/
+│   │       └── index.jsx
+│   │
+│   └── history/             ← componentes específicos da tela History
+│       └── HistoryTable.jsx
+│
+├── pages/
+│   ├── Dashboard.jsx
+│   ├── History.jsx
+│   ├── Products.jsx
+│   ├── Services.jsx
+│   └── Settings.jsx
+│
+├── styles/
+│   └── GlobalStyles.jsx
+│
+├── utils/
+│   ├── formatters.js        ← funções auxiliares, ex: formatar datas, valores
+│   └── constants.js
+│
+├── App.jsx
+└── main.jsx
