@@ -11,7 +11,19 @@ const Settings = () => {
             justifyContent="flex-start"
             alignItems="flex-start"
         >
-            <Typography variant="h5" gutterBottom sx={{ display: 'flex', fontWeight: 'bold', height: '40px', backgroundColor: '#1B1B1B', width: '100%', alignItems: 'center', justifyContent: 'start', pl: '10px' }}>
+            <Typography variant="h5"
+                gutterBottom
+                sx={{
+                    display: 'flex',
+                    fontWeight: 'bold',
+                    height: '40px',
+                    backgroundColor: '#1B1B1B',
+                    width: '100%',
+                    alignItems: 'center',
+                    justifyContent: 'start',
+                    pl: '10px',
+                    borderRadius: '5px'
+                }}>
                 Barber Settings
             </Typography>
 
