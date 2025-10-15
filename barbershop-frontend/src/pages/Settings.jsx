@@ -1,4 +1,4 @@
-import { Box, Typography, Paper } from "@mui/material";
+import { Box, Typography, Paper, Button } from "@mui/material";
 
 const Settings = () => {
     return (
@@ -66,12 +66,33 @@ const Settings = () => {
                                 p: 2,
                             }}
                         >
-                            <Typography
-                                variant="h6"
-                                sx={{ backgroundColor: "#1B1B1B", color: "white", p: 1, borderRadius: 1 }}
+                            <Box
+                                display="flex"
+                                borderRadius={1}
+                                alignItems="center"
+                                justifyContent="center"
+                                backgroundColor="#1b1b1b"
                             >
-                                Barbers
-                            </Typography>
+
+                                <Box
+                                    width="50%"
+                                >
+                                    <Typography
+                                        variant="h6"
+                                        sx={{ color: "white", p: 1, borderRadius: 1 }}
+                                    >
+                                        Barbers
+                                    </Typography>
+                                </Box>
+                                <Box
+                                    display="flex"
+                                    justifyContent={"end"}
+                                    width="50%"
+
+                                >
+                                    <Button variant="outlined">New Barber</Button>
+                                </Box>
+                            </Box>
 
                             <Box mt={2}>
                                 <Typography>Nome</Typography>
@@ -132,8 +153,8 @@ const Settings = () => {
                         </Box>
                     </Paper>
                 </Box>
-            </Box>
-        </Box>
+            </Box >
+        </Box >
     );
 };
 
