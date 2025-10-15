@@ -13,9 +13,13 @@ import {
     Box,
     Typography,
     Paper,
-    Button
+    Button,
+    FormGroup,
+    FormControlLabel,
+    Checkbox,
 } from "@mui/material";
 import styled from 'styled-components';
+import Schedule from '../components/Schedule';
 
 
 const ContainerMain = styled.div`
@@ -90,118 +94,16 @@ const Settings = () => {
                 alignItems="flex-start"
                 gap={3}
             >
+                {/* ---- Barbers and Notifications box ---- */}
                 <Box
                     display="flex"
+                    flexDirection="column"
                     borderRadius={1}
                     height="100%"
-                    width="100%"
+                    width="50%"
                     justifyContent="flex-start"
                     alignItems="flex-start"
                     gap={3}>
-
-                    {/* ---- Barbers ---- */}
-                    <Box
-                        display="flex"
-                        flexDirection="column"
-                        borderRadius={1}
-                        height="100%"
-                        width="100%"
-                        justifyContent="flex-start"
-                        alignItems="flex-start"
-                        gap={3}>
-                        <Paper
-                            elevation={2}
-                            sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                borderRadius: 1,
-                                width: "100%",
-                                height: "50%",
-                                p: 2,
-                            }}
-                        >
-                            <Box
-                                display="flex"
-                                borderRadius={1}
-                                alignItems="center"
-                                justifyContent="center"
-                                backgroundColor="#1b1b1b"
-                            >
-
-                                <Box
-                                    width="50%"
-                                >
-                                    <Typography
-                                        variant="h6"
-                                        sx={{ color: "white", p: 1, borderRadius: 1 }}
-                                    >
-                                        Barbers
-                                    </Typography>
-                                </Box>
-                                <Box
-                                    display="flex"
-                                    justifyContent={"end"}
-                                    width="50%"
-
-                                >
-                                    <Button variant="outlined">New Barber</Button>
-                                </Box>
-                            </Box>
-
-                            <Box mt={2}>
-                                <ContainerMain theme={darkTheme}>
-                                    <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
-                                        <Table stickyHeader>
-                                            <TableHead>
-                                                <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
-                                                    <TableCell sx={{ fontWeight: 'bold' }}>Id</TableCell>
-                                                    <TableCell sx={{ fontWeight: 'bold' }}>Barber</TableCell>
-                                                    <TableCell sx={{ fontWeight: 'bold' }}>Status</TableCell>
-                                                </TableRow>
-                                            </TableHead>
-                                            <TableBody>
-                                                {historyData.map((item) => (
-                                                    <TableRow key={item.id}>
-                                                        <TableCell sx={{ width: 20 }}>{item.id}</TableCell>
-                                                        <TableCell>{item.barber}</TableCell>
-                                                        <TableCell><Chip label={item.status} color={getStatusBarber(item.status)} /></TableCell>
-                                                    </TableRow>
-                                                ))}
-                                            </TableBody>
-                                        </Table>
-                                    </TableContainer>
-                                </ContainerMain >
-                            </Box>
-                        </Paper>
-
-                        {/* ---- Notifications ---- */}
-                        <Paper
-                            elevation={2}
-                            sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                borderRadius: 1,
-                                width: "100%",
-                                height: "50%",
-                                p: 2,
-                            }}
-                        >
-                            <Typography
-                                variant="h6"
-                                sx={{ backgroundColor: "#1B1B1B", color: "white", p: 1, borderRadius: 1 }}
-                            >
-                                Notifications
-                            </Typography>
-
-                            <Box mt={2}>
-                                <Typography>Lembretes Automáticos</Typography>
-                                <Typography mt={2}>Alerta de Cancelamento</Typography>
-                                <Typography mt={2}>Envio via WhatsApp (alertas, Excel, etc.)</Typography>
-                            </Box>
-                        </Paper>
-                    </Box>
-
-                    {/* ---- Scheduling ---- */}
                     <Paper
                         elevation={2}
                         sx={{
@@ -209,7 +111,73 @@ const Settings = () => {
                             flexDirection: "column",
                             borderRadius: 1,
                             width: "100%",
-                            height: "100%",
+                            height: "50%",
+                            p: 2,
+                        }}
+                    >
+                        <Box
+                            display="flex"
+                            borderRadius={1}
+                            alignItems="center"
+                            justifyContent="center"
+                            backgroundColor="#1b1b1b"
+                        >
+
+                            <Box
+                                width="50%"
+                            >
+                                <Typography
+                                    variant="h6"
+                                    sx={{ color: "white", p: 1, borderRadius: 1 }}
+                                >
+                                    Barbers
+                                </Typography>
+                            </Box>
+                            <Box
+                                display="flex"
+                                justifyContent={"end"}
+                                width="50%"
+
+                            >
+                                <Button variant="outlined">New Barber</Button>
+                            </Box>
+                        </Box>
+
+                        <Box mt={2}>
+                            <ContainerMain theme={darkTheme}>
+                                <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
+                                    <Table stickyHeader>
+                                        <TableHead>
+                                            <TableRow>
+                                                <TableCell sx={{ fontWeight: 'bold' }}>Id</TableCell>
+                                                <TableCell sx={{ fontWeight: 'bold' }}>Barber</TableCell>
+                                                <TableCell sx={{ fontWeight: 'bold' }}>Status</TableCell>
+                                            </TableRow>
+                                        </TableHead>
+                                        <TableBody>
+                                            {historyData.map((item) => (
+                                                <TableRow key={item.id}>
+                                                    <TableCell sx={{ width: 20 }}>{item.id}</TableCell>
+                                                    <TableCell>{item.barber}</TableCell>
+                                                    <TableCell><Chip label={item.status} color={getStatusBarber(item.status)} /></TableCell>
+                                                </TableRow>
+                                            ))}
+                                        </TableBody>
+                                    </Table>
+                                </TableContainer>
+                            </ContainerMain >
+                        </Box>
+                    </Paper>
+
+                    {/* ---- Notifications ---- */}
+                    <Paper
+                        elevation={2}
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            borderRadius: 1,
+                            width: "100%",
+                            height: "50%",
                             p: 2,
                         }}
                     >
@@ -217,16 +185,54 @@ const Settings = () => {
                             variant="h6"
                             sx={{ backgroundColor: "#1B1B1B", color: "white", p: 1, borderRadius: 1 }}
                         >
-                            Agenda da barbearia
+                            Notifications
                         </Typography>
 
                         <Box mt={2}>
-                            <Typography>Intervalo padrão entre cortes (ex: 10 min).</Typography>
-                            <Typography>Horário de funcionamento da barbearia.</Typography>
-                            <Typography>Dias de folga / feriados.</Typography>
+                            <FormGroup>
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="Lembretes Automáticos"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="Alerta de Cancelamento"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="Envio via WhatsApp (alertas, Excel, etc.)"
+                                />
+                            </FormGroup>
                         </Box>
                     </Paper>
                 </Box>
+
+                {/* ---- Scheduling ---- */}
+                <Paper
+                    elevation={2}
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        borderRadius: 1,
+                        width: "100%",
+                        height: "100%",
+                        p: 2,
+                    }}
+                >
+                    <Typography
+                        variant="h6"
+                        sx={{ backgroundColor: "#1B1B1B", color: "white", p: 1, borderRadius: 1 }}
+                    >
+                        Agenda da barbearia
+                    </Typography>
+
+                    <Box mt={2}>
+                        {/* <Typography>Intervalo padrão entre cortes (ex: 10 min).</Typography>
+                        <Typography>Horário de funcionamento da barbearia.</Typography>
+                        <Typography>Dias de folga / feriados.</Typography> */}
+                        <Schedule />
+                    </Box>
+                </Paper>
             </Box >
         </Box >
     );
