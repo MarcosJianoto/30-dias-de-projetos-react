@@ -1,95 +1,128 @@
-import styled from "styled-components"
-
-
-const ContainerMain = styled.div`
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-    justify-content: start;
-    align-items: start;
-    `
-
-const Notifications = styled.div`
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    height: 50%;
-    width: 100%;
-    align-items: start;
-`
-const Barbers = styled.div`
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    height: 50%;
-    width: 100%;
-    align-items: start;
-`
-const Scheduling = styled.div`
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    height: 50%;
-    width: 100%;
-    align-items: start;
-`
-const TitleSettings = styled.h1`
-    background-color: #1B1B1B;
-    font-size: 25px;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-`
-
+import { Box, Typography, Paper } from "@mui/material";
 
 const Settings = () => {
     return (
-        <ContainerMain>
-            <Barbers>
-                <TitleSettings>
-                    Barbers
-                </TitleSettings>
-                <br />
-                Nome
-                <br />
-                Horarios Disponíveis
-            </Barbers>
+        <Box
+            display="flex"
+            flexDirection="column"
+            borderRadius={1}
+            height="100%"
+            width="100%"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+        >
+            <Typography variant="h5" gutterBottom sx={{ display: 'flex', fontWeight: 'bold', height: '40px', backgroundColor: '#1B1B1B', width: '100%', alignItems: 'center', justifyContent: 'start', pl: '10px' }}>
+                Barber Settings
+            </Typography>
 
-            <Scheduling>
-                <TitleSettings>
-                    Agenda da barbearia
-                </TitleSettings>
-                <br />
-                Intervalo padrão entre cortes (ex: 10 min).
-                <br />
-                Horário de funcionamento da barbearia.
-                <br />
-                Dias de folga / feriados.
-            </Scheduling>
+            <Box
+                display="flex"
+                borderRadius={1}
+                height="100%"
+                width="100%"
+                justifyContent="flex-start"
+                alignItems="flex-start"
+                gap={3}
+            >
+                <Box
+                    display="flex"
+                    borderRadius={1}
+                    height="100%"
+                    width="100%"
+                    justifyContent="flex-start"
+                    alignItems="flex-start"
+                    gap={3}>
 
-            <Notifications>
-                <TitleSettings>
-                    Notifications
-                </TitleSettings>
-                <br />
-                Lembretes Automaticos
-                <br />
-                <br />
-                Alerta de Cancelamento
-                <br />
-                <br />
-                Envio via WhatsApp (alertas, por exemplo / Arquivo Excel)
-                <br />
-                <br />
-                Lembretes Automaticos
-                <br />
-                <br />
-            </Notifications>
+                    {/* ---- Barbers ---- */}
+                    <Box
+                        display="flex"
+                        flexDirection="column"
+                        borderRadius={1}
+                        height="100%"
+                        width="100%"
+                        justifyContent="flex-start"
+                        alignItems="flex-start"
+                        gap={3}>
+                        <Paper
+                            elevation={2}
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                borderRadius: 1,
+                                width: "100%",
+                                height: "50%",
+                                p: 2,
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                sx={{ backgroundColor: "#1B1B1B", color: "white", p: 1, borderRadius: 1 }}
+                            >
+                                Barbers
+                            </Typography>
 
-        </ContainerMain>
-    )
-}
+                            <Box mt={2}>
+                                <Typography>Nome</Typography>
+                                <Typography>Horários Disponíveis</Typography>
+                            </Box>
+                        </Paper>
 
-export default Settings
+                        {/* ---- Notifications ---- */}
+                        <Paper
+                            elevation={2}
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                borderRadius: 1,
+                                width: "100%",
+                                height: "50%",
+                                p: 2,
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                sx={{ backgroundColor: "#1B1B1B", color: "white", p: 1, borderRadius: 1 }}
+                            >
+                                Notifications
+                            </Typography>
+
+                            <Box mt={2}>
+                                <Typography>Lembretes Automáticos</Typography>
+                                <Typography mt={2}>Alerta de Cancelamento</Typography>
+                                <Typography mt={2}>Envio via WhatsApp (alertas, Excel, etc.)</Typography>
+                            </Box>
+                        </Paper>
+                    </Box>
+
+                    {/* ---- Scheduling ---- */}
+                    <Paper
+                        elevation={2}
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            borderRadius: 1,
+                            width: "100%",
+                            height: "100%",
+                            p: 2,
+                        }}
+                    >
+                        <Typography
+                            variant="h6"
+                            sx={{ backgroundColor: "#1B1B1B", color: "white", p: 1, borderRadius: 1 }}
+                        >
+                            Agenda da barbearia
+                        </Typography>
+
+                        <Box mt={2}>
+                            <Typography>Intervalo padrão entre cortes (ex: 10 min).</Typography>
+                            <Typography>Horário de funcionamento da barbearia.</Typography>
+                            <Typography>Dias de folga / feriados.</Typography>
+                        </Box>
+                    </Paper>
+                </Box>
+            </Box>
+        </Box>
+    );
+};
+
+export default Settings;
