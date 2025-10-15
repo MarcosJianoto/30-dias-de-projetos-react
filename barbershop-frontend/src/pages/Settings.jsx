@@ -1,6 +1,60 @@
-import { Box, Typography, Paper, Button } from "@mui/material";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Chip,
+    IconButton,
+    Stack,
+    CssBaseline,
+    Box,
+    Typography,
+    Paper,
+    Button
+} from "@mui/material";
+import styled from 'styled-components';
+
+
+const ContainerMain = styled.div`
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    `
+
 
 const Settings = () => {
+
+    const darkTheme = createTheme({
+        palette: {
+            mode: 'dark',
+        },
+    });
+
+
+
+    const getStatusBarber = (status) => {
+        switch (status) {
+            case "Trabalhando":
+                return "success";
+            case "Saiu":
+                return "error";
+            default:
+                return "warning"
+        }
+    }
+
+    const historyData = [
+        { id: 1, barber: "Junior", status: "Trabalhando" },
+    ];
+
+
+
+
     return (
         <Box
             display="flex"
@@ -95,8 +149,28 @@ const Settings = () => {
                             </Box>
 
                             <Box mt={2}>
-                                <Typography>Nome</Typography>
-                                <Typography>Horários Disponíveis</Typography>
+                                <ContainerMain theme={darkTheme}>
+                                    <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
+                                        <Table stickyHeader>
+                                            <TableHead>
+                                                <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
+                                                    <TableCell sx={{ fontWeight: 'bold' }}>Id</TableCell>
+                                                    <TableCell sx={{ fontWeight: 'bold' }}>Barber</TableCell>
+                                                    <TableCell sx={{ fontWeight: 'bold' }}>Status</TableCell>
+                                                </TableRow>
+                                            </TableHead>
+                                            <TableBody>
+                                                {historyData.map((item) => (
+                                                    <TableRow key={item.id}>
+                                                        <TableCell sx={{ width: 20 }}>{item.id}</TableCell>
+                                                        <TableCell>{item.barber}</TableCell>
+                                                        <TableCell><Chip label={item.status} color={getStatusBarber(item.status)} /></TableCell>
+                                                    </TableRow>
+                                                ))}
+                                            </TableBody>
+                                        </Table>
+                                    </TableContainer>
+                                </ContainerMain >
                             </Box>
                         </Paper>
 
