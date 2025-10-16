@@ -1,7 +1,9 @@
 import styled from "styled-components"
+import ProductsTable from "../components/ProductsTable"
 
 const ContainerMain = styled.div`
     display: flex;
+    flex-direction: column;
     border-radius: 5px;
     height: 100%;
     width: 100%;
@@ -13,7 +15,10 @@ const ContainerMain = styled.div`
 
 const Products = () => {
     return (
-        <ContainerMain>teste</ContainerMain>
+        <ContainerMain>
+            teste
+            <ProductsTable />
+        </ContainerMain>
     )
 }
 
