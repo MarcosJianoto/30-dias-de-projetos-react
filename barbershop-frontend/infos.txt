@@ -1,77 +1,8 @@
- ⚙️ Settings (Configurações do Sistema)
 
-1. Barbers (Barbeiros)
-→ Gerenciar informações dos barbeiros:
+criar tela para criação dos barbeiros, 
 
-Nome, especialidades, horários disponíveis.
+na Agenda da barbearia preciso setar os dias que vai ser fechado em vermelho para o barbeiro ver.
 
-Comissão, status (ativo/inativo).
+Refazer o Dashboard que ta feio. 
 
-Opção de vincular barbeiro à agenda principal.
-
-
-
-2. Notifications (Notificações)
-→ Configurações relacionadas a alertas e comunicações:
-
-Ativar/desativar envio de notificações automáticas (ex: lembrete de agendamento).
-
-Mensagens personalizadas (“Seu corte é amanhã às 14h”).
-
-Integração futura com WhatsApp ou e-mail.
-
-
-
-3. Agenda / Scheduling (Agendamento Geral)
-→ Configurações da agenda do sistema:
-
-Intervalo padrão entre cortes (ex: 30 min).
-
-Horário de funcionamento da barbearia.
-
-Dias de folga / feriados.
-
-Quantos atendimentos simultâneos podem ocorrer.
-
-
-
-ORGANIZAR AS PASTAS 
-
-src/
-├── assets/
-│   └── foto.png
-│
-├── components/
-│   ├── common/              ← componentes genéricos (usados em várias telas)
-│   │   ├── ButtonStandard/
-│   │   │   └── index.jsx
-│   │   ├── Card/
-│   │   │   └── index.jsx
-│   │   └── Table/
-│   │       └── index.jsx
-│   │
-│   ├── dashboard/           ← componentes específicos do dashboard
-│   │   ├── BigCard/
-│   │   │   └── index.jsx
-│   │   └── SmallCard/
-│   │       └── index.jsx
-│   │
-│   └── history/             ← componentes específicos da tela History
-│       └── HistoryTable.jsx
-│
-├── pages/
-│   ├── Dashboard.jsx
-│   ├── History.jsx
-│   ├── Products.jsx
-│   ├── Services.jsx
-│   └── Settings.jsx
-│
-├── styles/
-│   └── GlobalStyles.jsx
-│
-├── utils/
-│   ├── formatters.js        ← funções auxiliares, ex: formatar datas, valores
-│   └── constants.js
-│
-├── App.jsx
-└── main.jsx
+Services/ Settings -> subir o início pra cima, e ele vai descendo sempre que tem um novo cadastro. 
