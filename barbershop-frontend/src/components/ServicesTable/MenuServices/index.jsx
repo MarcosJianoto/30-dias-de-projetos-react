@@ -10,7 +10,7 @@ const MenuProduct = () => {
                 alignItems={'center'}
                 width={'100%'}
             >
-                <Typography variant="h4"> Product </Typography>
+                <Typography variant="h4"> Services </Typography>
                 <Box
                     display={'flex'}
                     justifyContent={'space-between'}
@@ -20,7 +20,7 @@ const MenuProduct = () => {
                         Export
                     </Button>
                     <Button variant="contained" startIcon={<AddIcon />}>
-                        Adicionar novo produto
+                        Adicionar novo serviço
                     </Button>
                 </Box>
             </Box>

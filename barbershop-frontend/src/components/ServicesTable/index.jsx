@@ -28,7 +28,7 @@ const getStatusColor = (status) => {
     switch (status) {
         case "Ativo":
             return "success";
-        case "Sem estoque":
+        case "Inativo":
             return "error";
         default:
             return "warning"
@@ -45,13 +45,15 @@ const ContainerMain = styled.div`
 
 const ProductsTable = () => {
 
-    const productsData = [
-        { id: 1, productName: "Shampoo Antiqueda", value: 35.00, estoque: 12, date: "10/10/2025", status: "Ativo" },
-        { id: 2, productName: "Pomada Modeladora", value: 25.00, estoque: 0, date: "05/10/2025", status: "Sem estoque" },
-        { id: 3, productName: "Óleo para Barba", value: 45.00, estoque: 5, date: "07/10/2025", status: "Ativo" },
-        { id: 4, productName: "Gel Fixador", value: 20.00, estoque: 2, date: "02/10/2025", status: "Ativo" },
-        { id: 5, productName: "Tesoura Profissional", value: 120.00, estoque: 0, date: "01/10/2025", status: "Sem estoque" }
+    const servicesData = [
+        { id: 1, serviceName: "Corte Masculino", price: 40.00, duration: "30min", category: "Cabelo", status: "Ativo", date: "10/10/2025" },
+        { id: 2, serviceName: "Corte + Barba", price: 60.00, duration: "45min", category: "Cabelo e Barba", status: "Ativo", date: "09/10/2025" },
+        { id: 3, serviceName: "Barba Completa", price: 35.00, duration: "25min", category: "Barba", status: "Ativo", date: "08/10/2025" },
+        { id: 4, serviceName: "Sobrancelha", price: 20.00, duration: "15min", category: "Estética", status: "Ativo", date: "07/10/2025" },
+        { id: 5, serviceName: "Corte Infantil", price: 30.00, duration: "30min", category: "Cabelo", status: "Ativo", date: "06/10/2025" },
+        { id: 6, serviceName: "Pigmentação Capilar", price: 80.00, duration: "50min", category: "Cabelo", status: "Inativo", date: "01/10/2025" }
     ];
+
 
     return (
         <ContainerMain theme={darkTheme}>
@@ -60,20 +62,22 @@ const ProductsTable = () => {
                     <TableHead>
                         <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
                             <TableCell sx={{ fontWeight: 'bold' }}>Id</TableCell>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Product Name </TableCell>
+                            <TableCell sx={{ fontWeight: 'bold' }}>Service Name</TableCell>
                             <TableCell sx={{ fontWeight: 'bold' }}>Price</TableCell>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Estoque</TableCell>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Data do cadastro do produto</TableCell>
+                            <TableCell sx={{ fontWeight: 'bold' }}>Categoria</TableCell>
+                            <TableCell sx={{ fontWeight: 'bold' }}>Duration</TableCell>
+                            <TableCell sx={{ fontWeight: 'bold' }}>Data</TableCell>
                             <TableCell sx={{ fontWeight: 'bold' }}>Status</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {productsData.map((item) => (
+                        {servicesData.map((item) => (
                             <TableRow key={item.id}>
                                 <TableCell sx={{ width: 20 }}>{item.id}</TableCell>
-                                <TableCell>{item.productName}</TableCell>
-                                <TableCell>{item.value}</TableCell>
-                                <TableCell>{item.estoque}</TableCell>
+                                <TableCell>{item.serviceName}</TableCell>
+                                <TableCell>{item.price}</TableCell>
+                                <TableCell>{item.duration}</TableCell>
+                                <TableCell>{item.category}</TableCell>
                                 <TableCell>{item.date}</TableCell>
                                 <TableCell><Chip label={item.status} color={getStatusColor(item.status)} /></TableCell>
                             </TableRow>
