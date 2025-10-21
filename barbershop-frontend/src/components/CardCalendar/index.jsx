@@ -5,13 +5,12 @@ import { MdHistory, MdOutlineSmsFailed } from 'react-icons/md';
 const ContainerMain = styled.div`
     background-color: #1B1B1B;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    height: 100%;
-    padding: 15px;
+    width: 100%;
+    min-height: 200px;
 `
 const TitleCards = styled.h3`
     display: flex;
@@ -19,7 +18,7 @@ const TitleCards = styled.h3`
     font-size: 20px;
 `
 const NumbersSummary = styled.h1`
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     font-size: 40px;
@@ -30,10 +29,9 @@ const CardCalendar = () => {
     return (
         <ContainerMain >
             <TitleCards>
-                <MdOutlineSmsFailed size={30} color="#ED5F38" />Unread Messages
+                Agenda de atendimentos do dia
             </TitleCards>
             <NumbersSummary>
-                100 teste
             </NumbersSummary>
         </ContainerMain>
     )

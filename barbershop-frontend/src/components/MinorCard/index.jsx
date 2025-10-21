@@ -10,8 +10,26 @@ const ContainerMain = styled.div`
     align-items: center;
     border-radius: 5px;
     height: 100%;
-    width: 22.5vh;
+    width: 20vh;
     padding: 15px;
+`
+
+const ContainerTitle = styled.div`
+   border: 1px solid red;
+   display: flex;
+   width: 100%;
+   height: 20%;
+   justify-content: center;
+   align-items: center;
+   `
+
+const ContainerSummary = styled.div`
+   border: 1px solid green;
+   display: flex;
+   width: 100%;
+   height: 80%;
+   justify-content: center;
+   align-items: center;
 `
 const TitleCards = styled.h3`
     display: flex;
@@ -26,15 +44,19 @@ const NumbersSummary = styled.h1`
 `
 
 
-const MinorCard = () => {
+const MinorCard = ({ title }) => {
     return (
         <ContainerMain >
-            <TitleCards>
-                <MdOutlineSmsFailed size={30} color="#ED5F38" />Unread Messages
-            </TitleCards>
-            <NumbersSummary>
-                100
-            </NumbersSummary>
+            <ContainerTitle>
+                <TitleCards>
+                    {title}
+                </TitleCards>
+            </ContainerTitle>
+            <ContainerSummary>
+                <NumbersSummary>
+                    100
+                </NumbersSummary>
+            </ContainerSummary>
         </ContainerMain>
     )
 }

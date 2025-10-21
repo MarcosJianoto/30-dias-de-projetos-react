@@ -1,69 +1,71 @@
-import styled from "styled-components"
-import { MdHistory, MdOutlineSmsFailed } from 'react-icons/md';
 import MinorCard from '../components/MinorCard'
 import BigCard from "../components/BigCard";
 import CardCalendar from "../components/CardCalendar";
 import CardUpperProfile from "../components/CardUpperProfile";
-
-const ContainerMain = styled.div`
-    border: 1px solid blue;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    padding:0 ;
-    gap: 20px;
-    `
-const ContainerMenuAndNotifications = styled.div`
-    display: flex;
-    border-radius: 5px 5px 0 0;
-    height: 5vh;
-    justify-content: center;
-    align-items: center;
-`
-const ContainerMinorCard = styled.div`
-    display: flex;
-    height: 20vh;
-    justify-content: space-between;
-    align-items: center;
-`
-const Calendar = styled.div`
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
-`
-const ContainerBigCard = styled.div`
-    display: flex;
-    border-radius: 0 0 5px 5px;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
-`
+import { AppBar, Toolbar, Box, Grid, Paper } from "@mui/material";
 
 const Dashboard = () => {
     return (
-        <ContainerMain>
-            <ContainerMenuAndNotifications>
-                <CardUpperProfile />
-            </ContainerMenuAndNotifications>
-            <ContainerMinorCard>
-                <MinorCard />
-                <MinorCard />
-                <MinorCard />
-                <MinorCard />
-            </ContainerMinorCard>
-            <Calendar>
-                <CardCalendar />
-            </Calendar>
-            <ContainerBigCard>
-                <BigCard />
-                <BigCard />
-            </ContainerBigCard>
+        <Box sx={{ width: '100%', height: '100%', p: 0 }}>
+            {/* AppBar superior com foto e notificações alinhados à direita */}
+            <AppBar position="static" color="transparent" elevation={0}>
+                <Toolbar>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <CardUpperProfile />
+                </Toolbar>
+            </AppBar>
+            <Grid container spacing={2} sx={{ mt: 1 }}>
 
-        </ContainerMain>
+                {/* Small cards row */}
+                <Grid item xs={12}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6} md={3}>
+                            <Paper elevation={1} sx={{ p: 2, height: '100%' }}>
+                                <MinorCard title={'Faturamento dia'} />
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={3}>
+                            <Paper elevation={1} sx={{ p: 2, height: '100%' }}>
+                                <MinorCard title={'Faturamento semana'} />
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={3}>
+                            <Paper elevation={1} sx={{ p: 2, height: '100%' }}>
+                                <MinorCard title={'Faturamento mês'} />
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={3}>
+                            <Paper elevation={1} sx={{ p: 2, height: '100%' }}>
+                                <MinorCard title={'Faturamento ano'} />
+                            </Paper>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                {/* Calendar */}
+                <Grid item xs={12}>
+                    <Paper elevation={1} sx={{ p: 2 }}>
+                        <CardCalendar />
+                    </Paper>
+                </Grid>
+
+                {/* Big cards row */}
+                <Grid item xs={12}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} md={6}>
+                            <Paper elevation={1} sx={{ p: 2, height: '100%' }}>
+                                <BigCard />
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <Paper elevation={1} sx={{ p: 2, height: '100%' }}>
+                                <BigCard />
+                            </Paper>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Box>
     )
 }
 
