@@ -33,38 +33,16 @@ const ContainerMain = styled.div`
 const TasksTable = () => {
 
     const agendaData = [
-        {
-            id: 1,
-            serviceName: "Corte Masculino",
-            barberName: "João",
-            clientName: "Carlos",
-            time: "09:00",
-            status: "Confirmado"
-        },
-        {
-            id: 2,
-            serviceName: "Corte + Barba",
-            barberName: "Pedro",
-            clientName: "Rafael",
-            time: "10:30",
-            status: "Agendado"
-        },
-        {
-            id: 3,
-            serviceName: "Barba Completa",
-            barberName: "João",
-            clientName: "Bruno",
-            time: "11:00",
-            status: "Finalizado"
-        },
-        {
-            id: 4,
-            serviceName: "Sobrancelha",
-            barberName: "Pedro",
-            clientName: "Gustavo",
-            time: "13:00",
-            status: "Cancelado"
-        },
+        { id: 1, serviceName: "Corte Masculino", barberName: "João", clientName: "Carlos", time: "09:00", status: "Confirmado" },
+        { id: 2, serviceName: "Corte + Barba", barberName: "Pedro", clientName: "Rafael", time: "10:30", status: "Agendado" },
+        { id: 3, serviceName: "Barba Completa", barberName: "João", clientName: "Bruno", time: "11:00", status: "Finalizado" },
+        { id: 4, serviceName: "Sobrancelha", barberName: "Pedro", clientName: "Gustavo", time: "13:00", status: "Cancelado" },
+        { id: 5, serviceName: "Corte Infantil", barberName: "Lucas", clientName: "Thiago", time: "14:00", status: "Confirmado" },
+        { id: 6, serviceName: "Platinado", barberName: "João", clientName: "Eduardo", time: "15:30", status: "Agendado" },
+        { id: 7, serviceName: "Barba Simples", barberName: "Pedro", clientName: "Felipe", time: "16:00", status: "Finalizado" },
+        { id: 8, serviceName: "Corte Social", barberName: "Lucas", clientName: "Marcelo", time: "17:00", status: "Confirmado" },
+        { id: 9, serviceName: "Corte + Navalha", barberName: "João", clientName: "Henrique", time: "18:00", status: "Agendado" },
+        { id: 10, serviceName: "Risco na Sobr.", barberName: "Pedro", clientName: "André", time: "18:30", status: "Cancelado" },
     ];
 
     const getStatusColor = (status) => {

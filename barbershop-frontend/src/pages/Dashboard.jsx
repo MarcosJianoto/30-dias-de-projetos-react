@@ -52,12 +52,12 @@ const Dashboard = () => {
                     <Grid container spacing={2} sx={{ px: 0 }}>
                         <Grid item xs={12} md={8} sm={4}>
                             <Paper elevation={1} sx={{ p: 2, height: '100%' }}>
-                                <MinorCard title={'Faturamento ano'} />
+                                <MinorCard title={'Ticket médio'} />
                             </Paper>
                         </Grid>
                         <Grid item xs={12} md={8} sm={4}>
                             <Paper elevation={1} sx={{ p: 2, height: '100%' }}>
-                                <MinorCard title={'Faturamento ano'} />
+                                <MinorCard title={'Cancelamentos hoje:'} />
                             </Paper>
                         </Grid>
                         <Grid item xs={12} md={8} sm={4}>
