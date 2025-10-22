@@ -16,6 +16,7 @@ import {
     Stack,
     CssBaseline
 } from "@mui/material";
+import HistoryMenu from "../components/HistoryMenu";
 
 const darkTheme = createTheme({
     palette: {
@@ -25,6 +26,15 @@ const darkTheme = createTheme({
 
 const ContainerMain = styled.div`
     display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+    `
+const ContainerPrimal = styled.div`
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
     justify-content: space-between;
@@ -68,34 +78,38 @@ const getStatusColor = (status) => {
 
 const History = () => {
     return (
-        <ContainerMain theme={darkTheme}>
-            <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
-                <Table stickyHeader>
-                    <TableHead>
-                        <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Id</TableCell>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Serviço </TableCell>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Barbeiro</TableCell>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Valor</TableCell>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Data</TableCell>
-                            <TableCell sx={{ fontWeight: 'bold' }}>Status</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {historyData.map((item) => (
-                            <TableRow key={item.id}>
-                                <TableCell sx={{ width: 20 }}>{item.id}</TableCell>
-                                <TableCell>{item.service} </TableCell>
-                                <TableCell>{item.barber}</TableCell>
-                                <TableCell>{item.value}</TableCell>
-                                <TableCell>{item.date}</TableCell>
-                                <TableCell><Chip label={item.status} color={getStatusColor(item.status)} /></TableCell>
+        <ContainerPrimal>
+            <HistoryMenu />
+
+            <ContainerMain theme={darkTheme}>
+                <TableContainer component={Paper} sx={{ maxHeight: '80%', marginTop: '0 auto' }}>
+                    <Table stickyHeader>
+                        <TableHead>
+                            <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
+                                <TableCell sx={{ fontWeight: 'bold' }}>Id</TableCell>
+                                <TableCell sx={{ fontWeight: 'bold' }}>Serviço </TableCell>
+                                <TableCell sx={{ fontWeight: 'bold' }}>Barbeiro</TableCell>
+                                <TableCell sx={{ fontWeight: 'bold' }}>Valor</TableCell>
+                                <TableCell sx={{ fontWeight: 'bold' }}>Data</TableCell>
+                                <TableCell sx={{ fontWeight: 'bold' }}>Status</TableCell>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </ContainerMain >
+                        </TableHead>
+                        <TableBody>
+                            {historyData.map((item) => (
+                                <TableRow key={item.id}>
+                                    <TableCell sx={{ width: 20 }}>{item.id}</TableCell>
+                                    <TableCell>{item.service} </TableCell>
+                                    <TableCell>{item.barber}</TableCell>
+                                    <TableCell>{item.value}</TableCell>
+                                    <TableCell>{item.date}</TableCell>
+                                    <TableCell><Chip label={item.status} color={getStatusColor(item.status)} /></TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </ContainerMain >
+        </ContainerPrimal>
     )
 }
 

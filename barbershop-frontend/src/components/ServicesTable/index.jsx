@@ -51,13 +51,13 @@ const ProductsTable = () => {
         { id: 3, serviceName: "Barba Completa", price: 35.00, duration: "25min", category: "Barba", status: "Ativo", date: "08/10/2025" },
         { id: 4, serviceName: "Sobrancelha", price: 20.00, duration: "15min", category: "Estética", status: "Ativo", date: "07/10/2025" },
         { id: 5, serviceName: "Corte Infantil", price: 30.00, duration: "30min", category: "Cabelo", status: "Ativo", date: "06/10/2025" },
-        { id: 6, serviceName: "Pigmentação Capilar", price: 80.00, duration: "50min", category: "Cabelo", status: "Inativo", date: "01/10/2025" }
+        { id: 6, serviceName: "Pigmentação Capilar", price: 80.00, duration: "50min", category: "Cabelo", status: "Inativo", date: "01/10/2025" },
     ];
 
 
     return (
         <ContainerMain theme={darkTheme}>
-            <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
+            <TableContainer component={Paper} sx={{ maxHeight: '80%' }}>
                 <Table stickyHeader>
                     <TableHead>
                         <TableRow sx={{ backgroundColor: '#c4c4c4' }}>

@@ -10,6 +10,7 @@ const ContainerMain = styled.div`
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    overflow-y: hidden;
     `
 
 const Products = () => {

@@ -55,7 +55,7 @@ const ProductsTable = () => {
 
     return (
         <ContainerMain theme={darkTheme}>
-            <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
+            <TableContainer component={Paper} sx={{ maxHeight: '80%' }}>
                 <Table stickyHeader>
                     <TableHead>
                         <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
