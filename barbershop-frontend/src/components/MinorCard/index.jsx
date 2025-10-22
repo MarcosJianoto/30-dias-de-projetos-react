@@ -15,7 +15,6 @@ const ContainerMain = styled.div`
 `
 
 const ContainerTitle = styled.div`
-   border: 1px solid red;
    display: flex;
    width: 100%;
    height: 20%;
@@ -24,7 +23,6 @@ const ContainerTitle = styled.div`
    `
 
 const ContainerSummary = styled.div`
-   border: 1px solid green;
    display: flex;
    width: 100%;
    height: 80%;

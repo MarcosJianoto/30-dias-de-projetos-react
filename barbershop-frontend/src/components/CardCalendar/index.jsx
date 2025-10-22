@@ -1,38 +1,36 @@
 import styled from "styled-components"
 import { MdHistory, MdOutlineSmsFailed } from 'react-icons/md';
+import TasksTable from "../TasksTable";
 
 
 const ContainerMain = styled.div`
     background-color: #1B1B1B;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border-radius: 5px;
     width: 100%;
-    min-height: 200px;
+    height: 100%;
+    overflow-y: auto;
 `
-const TitleCards = styled.h3`
+const ContainerSummary = styled.div`
     display: flex;
-    align-items: center;
-    font-size: 20px;
+    width: 100%;
+    flex: 1;
 `
-const NumbersSummary = styled.h1`
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
+const TasksDay = styled.h1`
+    font-size: 20px;
+    margin: 0;
 `
 
 
 const CardCalendar = () => {
     return (
         <ContainerMain >
-            <TitleCards>
-                Agenda de atendimentos do dia
-            </TitleCards>
-            <NumbersSummary>
-            </NumbersSummary>
+            <ContainerSummary>
+                <TasksDay>
+                    <TasksTable />
+                </TasksDay>
+            </ContainerSummary>
         </ContainerMain>
     )
 }
