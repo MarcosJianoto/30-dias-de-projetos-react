@@ -63,7 +63,7 @@ const TasksTable = () => {
 
     return (
         <ContainerMain theme={darkTheme}>
-            <TableContainer component={Paper} sx={{ width: '100%', maxHeight: '100%' }}>
+            <TableContainer component={Paper} sx={{ width: '100%', maxHeight: '400px', overflowY: 'auto' }}>
                 <Table stickyHeader sx={{ minWidth: 650 }}>
                     <TableHead>
                         <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
