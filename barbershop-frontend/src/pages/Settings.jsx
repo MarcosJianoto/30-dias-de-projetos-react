@@ -223,7 +223,7 @@ const Settings = () => {
                         variant="h6"
                         sx={{ backgroundColor: "#1B1B1B", color: "white", p: 1, borderRadius: 1 }}
                     >
-                        Agenda da barbearia
+                        Agenda de disponibilidade da barbearia (dias trabalhos e feriados)
                     </Typography>
 
                     <Box mt={2}>
