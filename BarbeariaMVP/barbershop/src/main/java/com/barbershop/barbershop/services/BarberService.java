@@ -34,13 +34,12 @@ public class BarberService {
         barberRepository.save(barber);
     }
 
-    public Barber getBarberId(Integer id) {
+    public BarberDTO getBarberById(Integer id) {
         Barber barber = barberFindById(id);
-        BarberDTO barberDTO = new BarberDTO(barber.getId(), barber.getName(), barber.getPhoneNumber(), barber.getActive());
-        return barber;
+        return new BarberDTO(barber.getId(), barber.getName(), barber.getPhoneNumber(), barber.getActive());
     }
 
-    public List<BarberDTO> getListBarber() {
+    public List<BarberDTO> getAllBarbers() {
         List<Barber> listBarber = barberRepository.findAll();
         List<BarberDTO> listBarberDTO = new ArrayList<>();
         if (!listBarber.isEmpty()) {
@@ -62,6 +61,11 @@ public class BarberService {
         barberRepository.save(barber);
     }
 
+    public void updateBarberActive(Integer id, Boolean isActive){
+        Barber barber = barberFindById(id);
+        barber.setActive(isActive);
+        barberRepository.save(barber);
+    }
 
     public void deleteBarber(Integer id) {
         if (id != null) {
