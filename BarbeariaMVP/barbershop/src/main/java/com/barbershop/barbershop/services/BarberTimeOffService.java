@@ -1,5 +1,6 @@
 package com.barbershop.barbershop.services;
 
+import ch.qos.logback.classic.spi.IThrowableProxy;
 import com.barbershop.barbershop.dtos.BarberDTO;
 import com.barbershop.barbershop.dtos.BarberTimeOffDTO;
 import com.barbershop.barbershop.model.Barber;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,10 +51,88 @@ public class BarberTimeOffService {
 
         //"HH:mm"
         DateTimeFormatter formatterTime = DateTimeFormatter.ofPattern("HH:mm");
-        LocalTime time = LocalTime.parse(barberTimeOffDTO.time(), formatterTime);
-        barberTimeOff.setTime(time);
+        LocalTime startTime = LocalTime.parse(barberTimeOffDTO.startTime(), formatterTime);
+        barberTimeOff.setStartTime(startTime);
+        LocalTime finishTime = LocalTime.parse(barberTimeOffDTO.finishTime(), formatterTime);
+        barberTimeOff.setFinishTime(finishTime);
 
         barberTimeOffRepository.save(barberTimeOff);
+    }
+
+    public void createListDaysTimeOff(List<String> days, BarberTimeOffDTO barberTimeOffDTO) {
+
+        if (days == null || days.isEmpty()) {
+            return;
+        }
+
+        Barber barber = barberRepository.findById(barberTimeOffDTO.barberId())
+                .orElseThrow(() -> new IllegalArgumentException("Barbeiro não encontrado"));
+
+        // Formato de data
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        // Formato de hora
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+
+        List<BarberTimeOff> timeOffList = new ArrayList<>();
+
+        for (String dayStr : days) {
+            LocalDate date;
+            try {
+                date = LocalDate.parse(dayStr, dateFormatter);
+            } catch (DateTimeParseException e) {
+                // Ignorar datas inválidas ou logar aviso
+                System.out.println("Data inválida: " + dayStr);
+                continue;
+            }
+
+            BarberTimeOff barberTimeOff = new BarberTimeOff();
+            barberTimeOff.setBarberId(barber);
+            barberTimeOff.setDescription(barberTimeOffDTO.description());
+            barberTimeOff.setDate(date);
+
+            // Hora de início e fim
+            LocalTime startTime = LocalTime.parse(barberTimeOffDTO.startTime(), timeFormatter);
+            LocalTime finishTime = LocalTime.parse(barberTimeOffDTO.finishTime(), timeFormatter);
+            barberTimeOff.setStartTime(startTime);
+            barberTimeOff.setFinishTime(finishTime);
+
+            timeOffList.add(barberTimeOff);
+        }
+        barberTimeOffRepository.saveAll(timeOffList);
+    }
+
+    public void updateBarberTimeOff(Integer id, BarberTimeOffDTO barberTimeOffDTO) {
+
+        if (id == null) {
+            return;
+        }
+
+        BarberTimeOff barberTimeOff = barberTimeOffRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Time off not found"));
+
+        Barber barber = barberRepository.findById(barberTimeOffDTO.barberId()).
+                orElseThrow(() -> new IllegalArgumentException("Barbeiro não encontrado"));
+
+        barberTimeOff.setBarberId(barber);
+        barberTimeOff.setDescription(barberTimeOffDTO.description());
+
+        //dd/mm/yyyy
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate date = LocalDate.parse(barberTimeOffDTO.date(), formatter);
+        barberTimeOff.setDate(date);
+
+        //"HH:mm"
+        DateTimeFormatter formatterTime = DateTimeFormatter.ofPattern("HH:mm");
+        LocalTime startTime = LocalTime.parse(barberTimeOffDTO.startTime(), formatterTime);
+        barberTimeOff.setStartTime(startTime);
+        LocalTime finishTime = LocalTime.parse(barberTimeOffDTO.finishTime(), formatterTime);
+        barberTimeOff.setFinishTime(finishTime);
+
+        barberTimeOffRepository.save(barberTimeOff);
+    }
+
+    public List<BarberTimeOff> getAllTimeOffs() {
+        return barberTimeOffRepository.findAll();
     }
 
     public void deleteBarberTimeOff(Integer id) {
