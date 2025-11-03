@@ -1,8 +1,11 @@
-
+import styles from './Navbar.module.scss'
+import { ReactComponent as Logo} from '../../assets/logo.svg';
 
 const Navbar = () => {
   return (
-    <div>navbar</div>
+    <nav className={styles.nav}>
+      <Logo className={styles.Logo} />
+    </nav>
   )
 }
 
