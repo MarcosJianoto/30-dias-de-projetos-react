@@ -3,6 +3,7 @@ package com.barbershop.barbershop.services;
 import com.barbershop.barbershop.dtos.BarberDTO;
 import com.barbershop.barbershop.model.Barber;
 import com.barbershop.barbershop.repositories.BarberRepository;
+import com.barbershop.barbershop.repositories.WorkingWeekDaysRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,12 +13,14 @@ import java.util.List;
 public class BarberService {
 
     private final BarberRepository barberRepository;
+    private final WorkingWeekDaysService workingWeekDaysService;
 
-    public BarberService(BarberRepository barberRepository) {
+    public BarberService(BarberRepository barberRepository, WorkingWeekDaysService workingWeekDaysService) {
         this.barberRepository = barberRepository;
+        this.workingWeekDaysService = workingWeekDaysService;
     }
 
-    public Barber barberFindById(Integer id){
+    public Barber barberFindById(Integer id) {
         return barberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Barbeiro não encontrado"));
     }
 
@@ -26,11 +29,23 @@ public class BarberService {
             return;
         }
 
+        //valida se barbeiro existe no banco, caso existe, retorna um erro.
+        List<Barber> barberExist = barberRepository.findAll();
+        for (Barber barb : barberExist) {
+            if (barberDTO.phoneNumber().equals(barb.getPhoneNumber())) {
+                throw new IllegalArgumentException("Barbeiro já existente");
+            }
+        }
+
         Barber barber = new Barber();
         barber.setName(barberDTO.name());
         barber.setPhoneNumber(barberDTO.phoneNumber());
         barber.setActive(barberDTO.isActive());
 
+        //chama a criação da agenda para o barbeiro.
+        workingWeekDaysService.createWorkingDays(barberDTO);
+
+        //salva no banco
         barberRepository.save(barber);
     }
 
@@ -51,7 +66,7 @@ public class BarberService {
         return listBarberDTO;
     }
 
-    public void updateBarber(Integer id, BarberDTO barberDTO){
+    public void updateBarber(Integer id, BarberDTO barberDTO) {
         Barber barber = barberFindById(id);
 
         barber.setName(barberDTO.name());
@@ -61,7 +76,7 @@ public class BarberService {
         barberRepository.save(barber);
     }
 
-    public void updateBarberActive(Integer id, Boolean isActive){
+    public void updateBarberActive(Integer id, Boolean isActive) {
         Barber barber = barberFindById(id);
         barber.setActive(isActive);
         barberRepository.save(barber);
