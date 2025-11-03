@@ -86,7 +86,7 @@ public class BarberService {
         if (id != null) {
             barberRepository.deleteById(id);
         } else {
-            throw new IllegalArgumentException("Não é possível deletar um barbeiro vazio");
+            throw new IllegalArgumentException("Barbeiro não existe");
         }
     }
 
