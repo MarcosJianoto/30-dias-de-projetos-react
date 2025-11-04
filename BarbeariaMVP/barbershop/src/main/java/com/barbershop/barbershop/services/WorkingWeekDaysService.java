@@ -81,12 +81,7 @@ public class WorkingWeekDaysService {
         }
     }
 
-    public void deleteWorkingDays(Barber barber) {
-        List<WorkingWeekDays> workingWeekDaysList = workingWeekDaysRepository.findAll();
-        for (WorkingWeekDays days : workingWeekDaysList) {
-            if (days.getBarber().getId().equals(barber.getId())) {
-                workingWeekDaysRepository.delete(days);
-            }
-        }
+    public void deleteWorkingDays(Integer barberId) {
+        workingWeekDaysRepository.deleteByBarberId(barberId);
     }
 }

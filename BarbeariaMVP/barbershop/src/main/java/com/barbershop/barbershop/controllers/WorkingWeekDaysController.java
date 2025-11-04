@@ -34,7 +34,7 @@ public class WorkingWeekDaysController {
 
     @DeleteMapping("/{barberId}")
     public ResponseEntity<Void> deleteWorkingDays(@PathVariable Integer barberId) {
-        workingWeekDaysService.deleteWorkingDays(workingWeekDaysService.barberFindById(barberId));
+        workingWeekDaysService.deleteWorkingDays(barberId);
         return ResponseEntity.noContent().build();
     }
 

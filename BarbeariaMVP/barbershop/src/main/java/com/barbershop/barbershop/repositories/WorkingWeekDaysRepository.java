@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WorkingWeekDaysRepository extends JpaRepository<WorkingWeekDays, Integer> {
-
+    void deleteByBarberId(Integer barberId);
 }

@@ -87,7 +87,7 @@ public class BarberService {
 
         if (id != null) {
             barberRepository.deleteById(id);
-            workingWeekDaysService.deleteWorkingDays(barber);
+            workingWeekDaysService.deleteWorkingDays(barber.getId());
         } else {
             throw new IllegalArgumentException("Barbeiro não existe");
         }
