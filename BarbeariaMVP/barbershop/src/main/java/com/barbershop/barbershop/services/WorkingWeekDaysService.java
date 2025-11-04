@@ -80,7 +80,6 @@ public class WorkingWeekDaysService {
 
             workingWeekDaysRepository.save(day);
         }
-
     }
 
     public void deleteWorkingDays(Barber barber) {
