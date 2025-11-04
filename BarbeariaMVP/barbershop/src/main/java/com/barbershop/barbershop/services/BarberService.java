@@ -83,8 +83,11 @@ public class BarberService {
     }
 
     public void deleteBarber(Integer id) {
+        Barber barber = barberFindById(id);
+
         if (id != null) {
             barberRepository.deleteById(id);
+            workingWeekDaysService.deleteWorkingDays(barber);
         } else {
             throw new IllegalArgumentException("Barbeiro não existe");
         }

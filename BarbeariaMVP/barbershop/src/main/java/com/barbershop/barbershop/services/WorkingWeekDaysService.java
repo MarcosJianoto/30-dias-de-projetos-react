@@ -1,6 +1,7 @@
 package com.barbershop.barbershop.services;
 
 import com.barbershop.barbershop.dtos.BarberDTO;
+import com.barbershop.barbershop.dtos.BarberHourAndDaysWorkDTO;
 import com.barbershop.barbershop.dtos.WorkingWeekDaysDTO;
 import com.barbershop.barbershop.enums.DayOfWeekEnum;
 import com.barbershop.barbershop.model.Barber;
@@ -33,10 +34,14 @@ public class WorkingWeekDaysService {
         return barberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Barbeiro não encontrado"));
     }
 
+    public WorkingWeekDays workingWeekDaysFindById(Integer id) {
+        return workingWeekDaysRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Dia de trabalho não encontrado"));
+    }
+
     public void createWorkingDays(BarberDTO barberDTO) {
         Barber barber = barberFindById(barberDTO.id());
 
-        for(DayOfWeekEnum day: DayOfWeekEnum.values()){
+        for (DayOfWeekEnum day : DayOfWeekEnum.values()) {
             WorkingWeekDays workingWeekDays = new WorkingWeekDays();
             workingWeekDays.setDayOfWeek(day);
             workingWeekDays.setBarber(barber);
@@ -44,11 +49,46 @@ public class WorkingWeekDaysService {
 
             DateTimeFormatter formatterLocalTime = DateTimeFormatter.ofPattern("HH:mm");
             LocalTime startTime = LocalTime.parse("09:00", formatterLocalTime);
+            workingWeekDays.setStartTime(startTime);
             LocalTime lunchStart = LocalTime.parse("12:00", formatterLocalTime);
+            workingWeekDays.setLunchStart(lunchStart);
             LocalTime lunchFinish = LocalTime.parse("13:00", formatterLocalTime);
+            workingWeekDays.setLunchFinish(lunchFinish);
             LocalTime finishTime = LocalTime.parse("19:00", formatterLocalTime);
+            workingWeekDays.setFinishTime(finishTime);
 
             workingWeekDaysRepository.save(workingWeekDays);
+        }
+    }
+
+    public void updateBarberHourAndDaysWork(List<BarberHourAndDaysWorkDTO> listBarberHourAndDaysWorkDTO) {
+
+        for (BarberHourAndDaysWorkDTO dto : listBarberHourAndDaysWorkDTO) {
+            WorkingWeekDays day = workingWeekDaysFindById(dto.daysId());
+            if (day == null) continue;
+
+            day.setWorkInDay(dto.workDay());
+            DateTimeFormatter formatterLocalTime = DateTimeFormatter.ofPattern("HH:mm");
+            LocalTime startTime = LocalTime.parse(dto.startTime(), formatterLocalTime);
+            day.setStartTime(startTime);
+            LocalTime lunchStart = LocalTime.parse(dto.lunchStart(), formatterLocalTime);
+            day.setLunchStart(lunchStart);
+            LocalTime lunchFinish = LocalTime.parse(dto.lunchFinish(), formatterLocalTime);
+            day.setLunchFinish(lunchFinish);
+            LocalTime finishTime = LocalTime.parse(dto.finishTime(), formatterLocalTime);
+            day.setFinishTime(finishTime);
+
+            workingWeekDaysRepository.save(day);
+        }
+
+    }
+
+    public void deleteWorkingDays(Barber barber) {
+        List<WorkingWeekDays> workingWeekDaysList = workingWeekDaysRepository.findAll();
+        for (WorkingWeekDays days : workingWeekDaysList) {
+            if (days.getBarber().getId().equals(barber.getId())) {
+                workingWeekDaysRepository.delete(days);
+            }
         }
     }
 }
