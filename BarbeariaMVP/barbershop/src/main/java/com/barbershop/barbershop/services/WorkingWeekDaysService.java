@@ -62,7 +62,6 @@ public class WorkingWeekDaysService {
     }
 
     public void updateBarberHourAndDaysWork(List<BarberHourAndDaysWorkDTO> listBarberHourAndDaysWorkDTO) {
-
         for (BarberHourAndDaysWorkDTO dto : listBarberHourAndDaysWorkDTO) {
             WorkingWeekDays day = workingWeekDaysFindById(dto.daysId());
             if (day == null) continue;
