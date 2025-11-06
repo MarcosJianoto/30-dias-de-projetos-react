@@ -1,13 +1,11 @@
 package com.barbershop.barbershop.services;
 
-import ch.qos.logback.classic.spi.IThrowableProxy;
 import com.barbershop.barbershop.dtos.BarberDTO;
 import com.barbershop.barbershop.dtos.BarberTimeOffDTO;
 import com.barbershop.barbershop.model.Barber;
 import com.barbershop.barbershop.model.BarberTimeOff;
 import com.barbershop.barbershop.repositories.BarberRepository;
 import com.barbershop.barbershop.repositories.BarberTimeOffRepository;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

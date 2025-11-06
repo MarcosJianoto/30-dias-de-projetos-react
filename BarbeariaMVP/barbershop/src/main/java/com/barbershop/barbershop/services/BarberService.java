@@ -3,7 +3,6 @@ package com.barbershop.barbershop.services;
 import com.barbershop.barbershop.dtos.BarberDTO;
 import com.barbershop.barbershop.model.Barber;
 import com.barbershop.barbershop.repositories.BarberRepository;
-import com.barbershop.barbershop.repositories.WorkingWeekDaysRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

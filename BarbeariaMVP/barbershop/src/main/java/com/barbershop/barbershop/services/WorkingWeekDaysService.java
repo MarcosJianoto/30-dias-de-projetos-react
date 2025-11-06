@@ -2,21 +2,15 @@ package com.barbershop.barbershop.services;
 
 import com.barbershop.barbershop.dtos.BarberDTO;
 import com.barbershop.barbershop.dtos.BarberHourAndDaysWorkDTO;
-import com.barbershop.barbershop.dtos.WorkingWeekDaysDTO;
 import com.barbershop.barbershop.enums.DayOfWeekEnum;
 import com.barbershop.barbershop.model.Barber;
 import com.barbershop.barbershop.model.WorkingWeekDays;
 import com.barbershop.barbershop.repositories.BarberRepository;
 import com.barbershop.barbershop.repositories.WorkingWeekDaysRepository;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
-import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
