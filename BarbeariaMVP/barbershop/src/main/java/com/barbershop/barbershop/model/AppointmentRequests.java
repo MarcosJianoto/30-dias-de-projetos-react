@@ -26,7 +26,9 @@ public class AppointmentRequests {
     @ManyToOne
     private Barber barberId;
 
+
     @Column(name = "status", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @Column(name = "date_appointment", nullable = false)
