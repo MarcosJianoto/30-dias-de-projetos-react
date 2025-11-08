@@ -102,20 +102,4 @@ public class AppointmentRequestsService {
         }
     }
 
-    ✅ 3. Schedule / BarberScheduleService (Classe de lógica da agenda do barbeiro)
-
-    Aqui sim é a parte de agenda, por exemplo:
-
-    Mostrar os horários já agendados do barbeiro.
-
-    Mostrar horários disponíveis para uma data específica.
-
-    Montar grade horária (ex: 08:00 até 18:00, com intervalos).
-
-    Verificar conflito de horários (não permitir 2 clientes no mesmo horário).
-
-    Gerar resposta com a agenda para o cliente.
-
-            ⚠️ Essa classe não precisa criar barbeiro nem criar agendamento, só consulta e organiza os dados.
-
 }

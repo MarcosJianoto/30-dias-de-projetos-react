@@ -17,3 +17,9 @@ o back end busca no banco de dados e envia o retorno para o cliente, informando 
 disponiveis para cortes / barba.
 
 
+
+---------------------------------------------
+
+Observações referente a PRODUCTS e SERVICES:
+- Nós temos que criar o cadastro de ambos, pra isso será necessário setar no banco.
+No momento eu criei um paleativo, optei por um valor padrão de 60 minutos no código, podendo ser diferente, precisarei customizar.
