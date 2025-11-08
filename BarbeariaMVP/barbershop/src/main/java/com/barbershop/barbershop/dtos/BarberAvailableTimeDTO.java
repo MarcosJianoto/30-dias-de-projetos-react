@@ -1,4 +1,7 @@
 package com.barbershop.barbershop.dtos;
 
-public record BarberAvailableTimeDTO(String hourAppointment) {
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public record BarberAvailableTimeDTO(String barberName, LocalDate date, LocalTime time) {
 }
