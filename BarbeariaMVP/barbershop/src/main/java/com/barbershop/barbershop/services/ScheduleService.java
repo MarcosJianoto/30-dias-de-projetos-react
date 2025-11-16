@@ -23,7 +23,7 @@ public class ScheduleService {
     private final AppointmentRequestsRepository appointmentRequestsRepository;
     private final BarberRepository barberRepository;
     private final WorkingWeekDaysRepository workingWeekDaysRepository;
-    private final Integer minutesServices = 60;
+    private final Integer minutesServices = 30;
 
     public ScheduleService(AppointmentRequestsRepository appointmentRequestsRepository,
                            BarberRepository barberRepository, WorkingWeekDaysRepository workingWeekDaysRepository) {
