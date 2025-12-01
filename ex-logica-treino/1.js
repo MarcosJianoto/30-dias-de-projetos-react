@@ -26,5 +26,7 @@ const arr = [
   },
 ];
 
-const ativos = arr.filter((user) => user.ativo == true);
+const ativos = arr.filter((user) => user.ativo);
+const inativos = arr.filter((user) => !user.ativo);
 console.log(ativos);
+console.log(inativos);
