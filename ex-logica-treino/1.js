@@ -26,5 +26,5 @@ const arr = [
   },
 ];
 
-const ativos = arr.filter((user) => user.ativo === true);
+const ativos = arr.filter((user) => user.ativo == true);
 console.log(ativos);
