@@ -27,4 +27,12 @@ const usersSumActiveAndInactive = users.reduce(
   }
 );
 
+const userTernario = users.reduce(
+  (acc, user) => {
+    user.ativo ? acc.ativos++ : acc.inativos++;
+    return acc;
+  },
+  { ativos: 0, inativos: 0 }
+);
+
 console.log(usersSumActiveAndInactive);
