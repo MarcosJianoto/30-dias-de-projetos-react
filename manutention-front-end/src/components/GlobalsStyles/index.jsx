@@ -1,6 +1,17 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalsStyles = createGlobalStyle`
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+li {
+  list-style: none;
+}
 
 html {
   line-height: 1.15; 
@@ -37,7 +48,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; 
+  font-family: Arial, Helvetica, sans-serif; 
   font-size: 1em; 
 }
 small {
