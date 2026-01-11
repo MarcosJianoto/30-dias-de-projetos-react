@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components"
+import Dashboard from "../Dashboard";
 
 const MenuStyled = styled.div`
     display: flex;
@@ -27,7 +28,7 @@ const Sidebar = styled.div`
 `
 
 const SidebarLink = styled(NavLink)`
-  width: 95%;
+  width: 100%;
   display: flex;
   gap: 15px;
   padding: 5px 8px;
@@ -76,7 +77,7 @@ const Menu = () => {
                     </SidebarLink>
                 </li>
                 <li>
-                    <SidebarLink to="/history">
+                    <SidebarLink to="/settings">
                         Configurações
                     </SidebarLink>
                 </li>
