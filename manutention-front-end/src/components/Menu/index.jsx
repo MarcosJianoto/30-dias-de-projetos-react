@@ -62,7 +62,7 @@ const Menu = () => {
                     </SidebarLink>
                 </li>
                 <li>
-                    <SidebarLink to="/services">
+                    <SidebarLink to="/vehicles">
                         Veículos
                     </SidebarLink>
                 </li>

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Menu from "./components/Menu";
 import Dashboard from "./components/Dashboard";
 import MenuTop from "./components/MenuTop";
+import Vehicles from "./components/Vehicles";
 
 
 const PageContainer = styled.div`
@@ -35,7 +36,7 @@ function App() {
           <MenuTop />
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/vehicles" element={""} />
+            <Route path="/vehicles" element={<Vehicles />} />
             <Route path="/customers" element={""} />
             <Route path="/history" element={""} />
             <Route path="/settings" element={""} />
