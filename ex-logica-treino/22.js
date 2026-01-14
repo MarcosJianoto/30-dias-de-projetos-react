@@ -37,3 +37,19 @@ const ehPar = (n) => {
 };
 
 ehPar(5);
+//callback simples
+
+const executarAcao = () => {
+  return saudacao();
+};
+
+executarAcao();
+
+//fazer pergunta
+const respostaParaSerCorreta = "sim";
+const fazerPergunta = (pergunta, respostaCorreta) => {
+  if (respostaCorreta === respostaParaSerCorreta) {
+    console.log(pergunta);
+  }
+};
+fazerPergunta("precisa?", "sim");
