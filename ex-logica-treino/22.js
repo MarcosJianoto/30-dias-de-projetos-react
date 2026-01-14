@@ -9,3 +9,31 @@ const apresentarPessoa = (nome = "Marcos", idade = 15) => {
 };
 
 apresentarPessoa();
+
+//calculo de IMC
+const calcularIMC = (peso, altura) => {
+  return peso / (altura * altura);
+};
+
+console.log(calcularIMC(78, 1.78));
+
+//verificar aprovação
+const verificarAprovacao = (nota) => {
+  if (nota >= 7) {
+    console.log("passou");
+  } else {
+    console.log("reprovado");
+  }
+};
+
+verificarAprovacao(8);
+
+const ehPar = (n) => {
+  if (n % 2 == 0) {
+    console.log("numero", n, "é Par");
+  } else {
+    console.log("numero", n, "n é Par");
+  }
+};
+
+ehPar(5);
