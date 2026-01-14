@@ -37,13 +37,6 @@ const ehPar = (n) => {
 };
 
 ehPar(5);
-//callback simples
-
-const executarAcao = () => {
-  return saudacao();
-};
-
-executarAcao();
 
 //fazer pergunta
 const respostaParaSerCorreta = "sim";
@@ -53,3 +46,15 @@ const fazerPergunta = (pergunta, respostaCorreta) => {
   }
 };
 fazerPergunta("precisa?", "sim");
+
+//callback => funcao recebe outra função como argumento.
+const greeting = (name) => {
+  return console.log(name);
+};
+
+const functionWithCallback = (callback) => {
+  let name = "Marcos";
+  callback(name);
+};
+
+functionWithCallback(greeting);
