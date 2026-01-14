@@ -2,9 +2,12 @@ import styled from "styled-components"
 import GlobalsStyles from "./components/GlobalsStyles"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Menu from "./components/Menu";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import MenuTop from "./components/MenuTop";
-import Vehicles from "./components/Vehicles";
+import Vehicles from "./pages/Vehicles";
+import Customers from "./pages/Customers";
+import History from "./pages/History";
+import Settings from "./pages/Settings";
 
 
 const PageContainer = styled.div`
@@ -37,9 +40,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/vehicles" element={<Vehicles />} />
-            <Route path="/customers" element={""} />
-            <Route path="/history" element={""} />
-            <Route path="/settings" element={""} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </ContentContainer>
       </PageContainer>

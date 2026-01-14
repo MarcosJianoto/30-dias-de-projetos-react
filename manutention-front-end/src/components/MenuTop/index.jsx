@@ -1,6 +1,4 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components"
-import Dashboard from "../Dashboard";
 import ButtonDefault from "../Button";
 
 const MenuTopContainer = styled.div`
@@ -15,8 +13,6 @@ const MenuStyled = styled.div`
     flex-direction: column;
     background-color: #0D0D0D;
     color: #fff;
-    border-right: #474747 solid 1px ;
-    border: 1px solid red;
 `
 
 const Header = styled.div`
@@ -25,7 +21,6 @@ const Header = styled.div`
 
 const MenuButtons = styled.div`
     display: flex;
-    border: 1px solid red;
     gap: 10px;
 `
 
