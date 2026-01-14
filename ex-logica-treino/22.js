@@ -48,13 +48,13 @@ const fazerPergunta = (pergunta, respostaCorreta) => {
 fazerPergunta("precisa?", "sim");
 
 //callback => funcao recebe outra função como argumento.
-const greeting = (name) => {
+const nameW = (name) => {
   return console.log(name);
 };
 
-const functionWithCallback = (callback) => {
-  let name = "Marcos";
-  callback(name);
+const functionWithCallback = (calback) => {
+  let name = "marcos";
+  return calback(name);
 };
 
-functionWithCallback(greeting);
+functionWithCallback(nameW);
