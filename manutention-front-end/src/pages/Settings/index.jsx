@@ -1,18 +1,20 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useState } from 'react';
 import styled from "styled-components"
+import ModalSettings from '../../components/ModalSettings'
 
 const darkTheme = createTheme({
     palette: {
         mode: 'dark',
     },
 });
+
 const ContainerMain = styled.div`
     display: flex;
     flex-direction: column;
     height: 100vh;
     width: 100%;
     text-align: center;
-    border: 1px solid red;
 `
 const TitleText = styled.h3`
     margin: 4rem 0 4rem 0;
@@ -31,34 +33,76 @@ const RowBottom = styled.div`
     gap: 60px;
 `
 const Card = styled.div`
+    display: flex;
+    color: white;
     background-color: #282828;
     padding: 16px;
     border-radius: 4px;
-    min-height: 350px;
-    width: 220px;
+    min-height: 250px;
+    width: 150px;
     display: flex;
-    align-items: center;
     justify-content: center;
-`
+    align-items: end;
+    border: 1px solid #474747;
+    transition: 0.3s;
 
+    &:hover{
+        transform: scale(1.03);
+        cursor: pointer;
+    }
+`
 const Settings = () => {
+    const [open, setOpen] = useState(false);
+    const [modalType, setModalType] = useState(null)
+
+    const openModal = (type) => {
+        setModalType(type);
+        setOpen(true);
+    };
+
+    const closeModal = () => {
+        setOpen(false);
+        setModalType(null);
+    };
+
+
     return (
         <ThemeProvider theme={darkTheme}>
             <ContainerMain>
                 <TitleText>
                     O que você gostaria de configurar?
                 </TitleText>
+
                 <RowTop>
-                    <Card>Dashboard</Card>
-                    <Card>Dashboard</Card>
+                    <Card onClick={() => openModal('auto-notifications')}>
+                        Notificações Automáticas
+                    </Card>
+                    <Card onClick={() => openModal('manual-notification')}>
+                        Notificação Manual
+                    </Card>
                 </RowTop>
+
                 <RowBottom>
-                    <Card>Dashboard</Card>
-                    <Card>Dashboard</Card>
-                    <Card>Dashboard</Card>
+                    <Card onClick={() => openModal('channel')}>
+                        Canal de notificação
+                    </Card>
+                    <Card onClick={() => openModal('chip')}>
+                        Chip do veículo
+                    </Card>
+                    <Card onClick={() => openModal('frequency')}>
+                        Frequência padrão de manutenção
+                    </Card>
                 </RowBottom>
-            </ContainerMain >
+
+                {open && (
+                    <ModalSettings
+                        type={modalType}
+                        closeModal={closeModal}
+                    />
+                )}
+            </ContainerMain>
         </ThemeProvider>
+
     )
 }
 
