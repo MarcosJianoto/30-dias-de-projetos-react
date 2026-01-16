@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import AutoNotifications from "./AutoNotifications";
 
 const Overlay = styled.div`
   position: fixed;
@@ -26,7 +27,7 @@ const Modal = ({ type, closeModal }) => {
   const renderContent = () => {
     switch (type) {
       case 'auto-notifications':
-        return <h2>Configurar notificações automáticas</h2>;
+        return <AutoNotifications />
 
       case 'manual-notification':
         return <h2>Configurar notificação manual</h2>;
