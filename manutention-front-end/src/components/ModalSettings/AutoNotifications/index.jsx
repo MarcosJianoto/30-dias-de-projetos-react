@@ -17,13 +17,7 @@ const DivMainBody = styled.div`
   flex-direction: column;
   justify-content: space-around;
   margin: 7rem 0 7rem;
-  border: 1px solid red;
 `
-
-const DivBodyRight = styled.div`
-  margin-left: 2rem;
-  `
-
 const Row = styled.label`
   display: flex;
   align-items: center;
@@ -38,6 +32,7 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
 
 const SettingRow = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 `
@@ -47,6 +42,8 @@ const SubRow = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  opacity: ${(props) => !props.active ? "0.2" : "1"} ;
+  pointer-events: ${(props) => !props.active ? "none" : "auto"} ;
 `
 const NumberInput = styled.input.attrs({ type: "number" })`
   width: 60px;
@@ -74,18 +71,16 @@ const AutoNotifications = () => {
           </Row>
 
           <SettingRow>
-            <label>
+            <label style={{ cursor: 'pointer' }}>
               <input
-                type="checkbox"
+                type='checkbox'
                 checked={enabled}
                 onChange={(e) => setEnabled(e.target.checked)}
               />
-              Receber notificação antes da manutenção
+              Enviar notificação antes da manutenção
             </label>
-          </SettingRow>
 
-          {enabled && (
-            <SubRow>
+            <SubRow active={enabled}>
               Dias de antecedência:
               <NumberInput
                 min={1}
@@ -93,10 +88,14 @@ const AutoNotifications = () => {
                 onChange={(e) => setDays(e.target.value)}
               />
             </SubRow>
-          )}
-
+          </SettingRow>
 
         </DivMainBody>
+
+        <button>
+          teste
+        </button>
+
       </ContainerMain >
     </>
   );
