@@ -77,12 +77,6 @@ const Settings = () => {
                     <Card onClick={() => openModal('auto-notifications')}>
                         Notificações Automáticas
                     </Card>
-                    <Card onClick={() => openModal('manual-notification')}>
-                        Notificação Manual
-                    </Card>
-                </RowTop>
-
-                <RowBottom>
                     <Card onClick={() => openModal('channel')}>
                         Canal de notificação
                     </Card>
@@ -92,6 +86,10 @@ const Settings = () => {
                     <Card onClick={() => openModal('frequency')}>
                         Frequência padrão de manutenção
                     </Card>
+                </RowTop>
+
+                <RowBottom>
+
                 </RowBottom>
 
                 {open && (

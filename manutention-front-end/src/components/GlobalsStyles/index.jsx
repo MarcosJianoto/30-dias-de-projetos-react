@@ -80,7 +80,7 @@ textarea {
   line-height: 1.15; 
   margin: 0; 
 }
-button,git st
+button,
 input { 
   overflow: visible;
 }
