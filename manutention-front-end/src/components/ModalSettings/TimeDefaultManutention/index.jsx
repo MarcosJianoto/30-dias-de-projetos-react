@@ -49,7 +49,7 @@ const NumberInput = styled.input.attrs({ type: "number" })`
   width: 60px;
 `
 
-const AutoNotifications = () => {
+const TimeDefaultManutention = () => {
 
   const [enabled, setEnabled] = useState(false);
   const [days, setDays] = useState(0);
@@ -103,4 +103,4 @@ const AutoNotifications = () => {
 
 
 
-export default AutoNotifications
+export default TimeDefaultManutention

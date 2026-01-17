@@ -77,12 +77,6 @@ const Settings = () => {
                     <Card onClick={() => openModal('auto-notifications')}>
                         Notificações Automáticas
                     </Card>
-                    <Card onClick={() => openModal('channel')}>
-                        Canal de notificação
-                    </Card>
-                    <Card onClick={() => openModal('chip')}>
-                        Chip do veículo
-                    </Card>
                     <Card onClick={() => openModal('frequency')}>
                         Frequência padrão de manutenção
                     </Card>
