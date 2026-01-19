@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ContainerMain, Checkbox, DivMainBody, DivTop, NumberInput, Row, SettingRow, SubRow } from "../ModalDefaultStyle";
+import Button from "@mui/material/Button";
+import ButtonDefault from "../../Button";
 
 const AutoNotifications = () => {
 
@@ -44,9 +46,8 @@ const AutoNotifications = () => {
 
         </DivMainBody>
 
-        <button>
-          teste
-        </button>
+        <Button>Salvar</Button>
+
 
       </ContainerMain >
     </>

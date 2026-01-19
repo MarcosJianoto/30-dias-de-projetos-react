@@ -32,11 +32,11 @@ const ButtonTop = styled.button`
 `;
 
 const ButtonDefault = ({ text }) => {
-    return (
-        <ButtonTop>
-            {text}
-        </ButtonTop>
-    )
+  return (
+    <ButtonTop>
+      {text}
+    </ButtonTop>
+  )
 }
 
 export default ButtonDefault

@@ -1,28 +1,27 @@
+import Button from "@mui/material/Button";
 import { ContainerMain, Checkbox, DivMainBody, DivTop, Row } from "../ModalDefaultStyle";
 
-const TimeDefaultManutention = () => {
+const FrequencyManutentionDefault = () => {
 
   return (
     <>
       <ContainerMain>
         <DivTop>
-          Auto Notifications
+          Frequência padrão de manutenção
         </DivTop>
+
         <DivMainBody>
           <Row>
             <Checkbox />
-            Notificações automáticas
+            Notificar validação por quilometragem?
           </Row>
           <Row>
             <Checkbox />
-            Enviar para todos os veículos
+            Notificar validação por tempo?
           </Row>
-
         </DivMainBody>
 
-        <button>
-          teste
-        </button>
+        <Button>Salvar</Button>
 
       </ContainerMain >
     </>
@@ -31,4 +30,4 @@ const TimeDefaultManutention = () => {
 
 
 
-export default TimeDefaultManutention
+export default FrequencyManutentionDefault
