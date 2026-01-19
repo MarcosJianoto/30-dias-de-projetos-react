@@ -1,4 +1,4 @@
-import { ContainerMain, Checkbox, DivMainBody, DivTop, NumberInput, Row, SettingRow, SubRow } from "../ModalDefaultStyle";
+import { ContainerMain, Checkbox, DivMainBody, DivTop, Row } from "../ModalDefaultStyle";
 
 const TimeDefaultManutention = () => {
 
