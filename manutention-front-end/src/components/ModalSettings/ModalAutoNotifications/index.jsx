@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { ContainerMain, Checkbox, DivMainBody, DivTop, NumberInput, Row, SettingRow, SubRow } from "../ModalDefaultStyle";
 import Button from "@mui/material/Button";
-import ButtonDefault from "../../Button";
 
-const AutoNotifications = () => {
+const AutoNotifications = ({ closeModal }) => {
 
   const [enabled, setEnabled] = useState(false);
   const [days, setDays] = useState(0);
@@ -46,7 +45,7 @@ const AutoNotifications = () => {
 
         </DivMainBody>
 
-        <Button>Salvar</Button>
+        <Button onClick={closeModal}>Salvar</Button>
 
 
       </ContainerMain >

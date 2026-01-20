@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import { ContainerMain, Checkbox, DivMainBody, DivTop, Row } from "../ModalDefaultStyle";
 
-const FrequencyManutentionDefault = () => {
+const FrequencyManutentionDefault = ({ closeModal }) => {
 
   return (
     <>
@@ -9,7 +9,6 @@ const FrequencyManutentionDefault = () => {
         <DivTop>
           Frequência padrão de manutenção
         </DivTop>
-
         <DivMainBody>
           <Row>
             <Checkbox />
@@ -21,7 +20,7 @@ const FrequencyManutentionDefault = () => {
           </Row>
         </DivMainBody>
 
-        <Button>Salvar</Button>
+        <Button onClick={closeModal}>Salvar</Button>
 
       </ContainerMain >
     </>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import AutoNotifications from "./ModalAutoNotifications";
-import TimeDefaultManutention from "./FrequencyManutentionDefault";
+import FrequencyManutentionDefault from "./FrequencyManutentionDefault";
 
 const Overlay = styled.div`
   position: fixed;
@@ -28,10 +28,10 @@ const Modal = ({ type, closeModal }) => {
   const renderContent = () => {
     switch (type) {
       case 'auto-notifications':
-        return <AutoNotifications />
+        return <AutoNotifications closeModal={closeModal} />
 
       case 'frequency':
-        return <TimeDefaultManutention />
+        return <FrequencyManutentionDefault closeModal={closeModal} />
 
       default:
         return null;
