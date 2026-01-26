@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 const AutoNotifications = ({ closeModal }) => {
 
   const [enabled, setEnabled] = useState(false);
-  const [days, setDays] = useState(0);
+  const [days, setDays] = useState(1);
 
   return (
     <>

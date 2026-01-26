@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import ButtonDefault from "../Button";
+import Button from "@mui/material/Button";
 
 const MenuTopContainer = styled.div`
     display: flex;
@@ -47,10 +47,10 @@ const MenuTop = () => {
                 </Subtitle>
             </MenuStyled>
             <MenuButtons>
-                <ButtonDefault text={'Cadastrar veículo'} />
-                <ButtonDefault text={'Cadastrar cliente'} />
+                <Button>Cadastrar Veículo</Button>
+                <Button>Cadastrar cliente</Button>
                 <ExportDate>
-                    <ButtonDefault text={'Exportar dados '} />
+                    <Button>Exportar dados</Button>
                 </ExportDate>
             </MenuButtons>
         </MenuTopContainer>
