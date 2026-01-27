@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import Button from "@mui/material/Button";
+import { useState } from "react";
+import ModalCreateVehicle from "../ModalCreateVehicle";
 
 const MenuTopContainer = styled.div`
     display: flex;
@@ -36,6 +38,16 @@ const ExportDate = styled.div`
 `
 
 const MenuTop = () => {
+    const [open, setOpen] = useState(false);
+
+    const openModal = () => {
+        setOpen(true);
+    }
+
+    const closeModal = () => {
+        setOpen(false);
+    }
+
     return (
         <MenuTopContainer>
             <MenuStyled>
@@ -47,12 +59,18 @@ const MenuTop = () => {
                 </Subtitle>
             </MenuStyled>
             <MenuButtons>
-                <Button>Cadastrar Veículo</Button>
+                <Button onClick={openModal}>Cadastrar Veículo</Button>
                 <Button>Cadastrar cliente</Button>
                 <ExportDate>
                     <Button>Exportar dados</Button>
                 </ExportDate>
             </MenuButtons>
+
+            {open && (
+                <ModalCreateVehicle
+                    closeModal={closeModal}
+                />
+            )}
         </MenuTopContainer>
     )
 }

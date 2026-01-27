@@ -1,3 +1,5 @@
+import { Button } from "@mui/material";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Overlay = styled.div`
@@ -23,11 +25,31 @@ const ModalBox = styled.div`
 
 const Modal = ({ closeModal }) => {
 
+  const [vehicle, setVehicle] = useState("");
+
   return (
     <>
       <Overlay onClick={closeModal} />
       <ModalBox>
-        'teste'
+        <h3>Criar nova manutenção</h3>
+        <br />
+        <p>Selecione o veículo do cliente: </p>
+        <select value={vehicle} onChange={(e) => setVehicle(e.target.value)}>
+          <option value="vehicle1">Veículo 1 - Placa ABC-1234</option>
+          <option value="vehicle2">Veículo 2 - Placa DEF-5678</option>
+          <option value="vehicle3">Veículo 3 - Placa GHI-9012</option>
+          <option value="newVehicle">Novo veículo</option>
+        </select>
+
+        <br /><br />
+        <Button variant="contained" color="primary" onClick={closeModal}>
+          Confirmar
+        </Button>
+
+        {vehicle === "newVehicle" && (
+          'teste'
+        )}
+
       </ModalBox>
     </>
   );
