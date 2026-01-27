@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import { ContainerMain, Checkbox, DivMainBody, DivTop, Row } from "../ModalDefaultStyle";
+import { ContainerMain, Checkbox, DivMainBody, DivTop, Row } from "../ModalDefaultStyle/style";
 
 const FrequencyManutentionDefault = ({ closeModal }) => {
 

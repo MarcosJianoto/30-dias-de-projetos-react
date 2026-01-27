@@ -1,5 +1,6 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import styled from "styled-components"
+import ModalCustomer from '../../components/ModalCustomer'
 import {
     Box,
     Typography,
@@ -16,6 +17,7 @@ import {
     Stack,
     CssBaseline
 } from "@mui/material";
+import { useState } from 'react';
 
 const Body = styled.div`
     width: 100%;
@@ -30,12 +32,12 @@ const darkTheme = createTheme({
     },
 });
 
-const productsData = [
-    { id: 1, productName: "Shampoo Antiqueda", value: 35.00, estoque: 12, date: "10/10/2025", status: "Ativo" },
-    { id: 2, productName: "Pomada Modeladora", value: 25.00, estoque: 0, date: "05/10/2025", status: "Sem estoque" },
-    { id: 3, productName: "Óleo para Barba", value: 45.00, estoque: 5, date: "07/10/2025", status: "Ativo" },
-    { id: 4, productName: "Gel Fixador", value: 20.00, estoque: 2, date: "02/10/2025", status: "Ativo" },
-    { id: 5, productName: "Tesoura Profissional", value: 120.00, estoque: 0, date: "01/10/2025", status: "Sem estoque" }
+const customersData = [
+    { id: 1, name: "Marcos Jianoto", phone: "(51) 99999-1111", email: "marcos@email.com" },
+    { id: 2, name: "Ana Souza", phone: "(51) 98888-2222", email: "ana.souza@email.com" },
+    { id: 3, name: "Carlos Lima", phone: "(51) 97777-3333", email: "carlos.lima@email.com" },
+    { id: 4, name: "Juliana Ferreira", phone: "(51) 96666-4444", email: "juliana.ferreira@email.com" },
+    { id: 5, name: "Rafael Gomes", phone: "(51) 95555-5555", email: "rafael.gomes@email.com" }
 ];
 
 const ContainerMain = styled.div`
@@ -47,35 +49,49 @@ const ContainerMain = styled.div`
 `
 
 const Customers = () => {
+    const [open, setOpen] = useState(false);
+
+    const openModal = () => {
+        setOpen(true);
+    }
+
+    const closeModal = () => {
+        setOpen(false);
+    }
+
     return (
         <ThemeProvider theme={darkTheme}>
             <ContainerMain>
                 <TableContainer component={Paper} sx={{ maxHeight: '100%' }}>
                     <Table stickyHeader>
                         <TableHead>
-                            <TableRow sx={{ backgroundColor: '#c4c4c4' }}>
-                                <TableCell sx={{ fontWeight: 'bold' }}>Id</TableCell>
-                                <TableCell sx={{ fontWeight: 'bold' }}>Name </TableCell>
-                                <TableCell sx={{ fontWeight: 'bold' }}>Phone</TableCell>
-                                <TableCell sx={{ fontWeight: 'bold' }}>Email</TableCell>
-                                <TableCell sx={{ fontWeight: 'bold' }}>Vehicle</TableCell>
+                            <TableRow>
+                                <TableCell>Id</TableCell>
+                                <TableCell>Name </TableCell>
+                                <TableCell>Phone</TableCell>
+                                <TableCell>Email</TableCell>
                             </TableRow>
                         </TableHead>
-                        <TableBody>
-                            {productsData.map((item) => (
-                                <TableRow key={item.id}>
-                                    <TableCell sx={{ width: 20 }}>{item.id}</TableCell>
-                                    <TableCell>{item.productName}</TableCell>
-                                    <TableCell>{item.value}</TableCell>
-                                    <TableCell>{item.estoque}</TableCell>
-                                    <TableCell>{item.date}</TableCell>
+                        <TableBody >
+                            {customersData.map((item) => (
+                                <TableRow key={item.id} hover style={{ cursor: 'pointer' }} onClick={() => openModal('auto-notifications')}>
+                                    <TableCell>{item.id}</TableCell>
+                                    <TableCell>{item.name}</TableCell>
+                                    <TableCell>{item.phone}</TableCell>
+                                    <TableCell>{item.email}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
+
+                        {open && (
+                            <ModalCustomer
+                                closeModal={closeModal}
+                            />
+                        )}
                     </Table>
                 </TableContainer>
             </ContainerMain >
-        </ThemeProvider>
+        </ThemeProvider >
     )
 }
 

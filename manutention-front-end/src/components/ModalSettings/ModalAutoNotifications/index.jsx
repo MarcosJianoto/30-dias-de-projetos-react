@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ContainerMain, Checkbox, DivMainBody, DivTop, NumberInput, Row, SettingRow, SubRow } from "../ModalDefaultStyle";
+import { ContainerMain, Checkbox, DivMainBody, DivTop, NumberInput, Row, SettingRow, SubRow } from "../ModalDefaultStyle/style";
 import Button from "@mui/material/Button";
 
 const AutoNotifications = ({ closeModal }) => {

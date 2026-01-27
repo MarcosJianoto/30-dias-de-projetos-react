@@ -87,7 +87,7 @@ const Settings = () => {
                 </RowBottom>
 
                 {open && (
-                    <ModalSettings
+                    <ModalSttings
                         type={modalType}
                         closeModal={closeModal}
                     />
