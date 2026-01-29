@@ -79,6 +79,7 @@ textarea {
   font-size: 100%;  
   line-height: 1.15; 
   margin: 0; 
+  margin-bottom: 10px;
   width: 100%;
   height: 40px;
   padding: 10px;

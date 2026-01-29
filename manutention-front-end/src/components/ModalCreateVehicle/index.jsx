@@ -20,6 +20,11 @@ const ModalBox = styled.div`
   min-width: 400px;
   z-index: 1001;
   color: white;
+  border: 1px solid #444;
+`;
+
+const Text = styled.p`
+  margin-bottom: 0;
 `;
 
 
@@ -35,29 +40,33 @@ const Modal = ({ closeModal }) => {
       <ModalBox>
         <h3>Cadastrar novo veículo</h3>
         <br />
-
-        <p>Selecione o cliente dono do veículo: </p>
-        <select value={customer} onChange={(e) => setCustomer(e.target.value)}>
-          <option value="customer1">Marcos Jianoto</option>
-          <option value="customer2">Ana Souza</option>
-          <option value="customer3">Carlos Lima</option>
-        </select>
-        <p>Selecione a marca do veículo: </p>
+        <Text>Selecione a marca do veículo: </Text>
         <select value={brand} onChange={(e) => setBrand(e.target.value)}>
           <option value="brand1">Toyota</option>
           <option value="brand2">Honda</option>
           <option value="brand3">Ford</option>
         </select>
-        <p>Selecione o modelo do veículo: </p>
+        <Text>Selecione o modelo do veículo: </Text>
         <select value={model} onChange={(e) => setModel(e.target.value)}>
           <option value="model1">Corolla</option>
           <option value="model2">Civic</option>
           <option value="model3">Mustang</option>
         </select>
-        <p>Digite a placa do veículo: </p>
+        <Text>Digite a placa do veículo sem traço ou espaços: </Text>
         <input type="text" placeholder="ABC1B34" />
 
-        <br /><br />
+        <br />
+        <br />
+        <br />
+
+        <Text>Vincule o cliente ao veículo: </Text>
+        <select value={customer} onChange={(e) => setCustomer(e.target.value)}>
+          <option value="noClient">Sem cliente vinculado</option>
+          <option value="customer1">Marcos Jianoto</option>
+          <option value="customer2">Ana Souza</option>
+          <option value="customer3">Carlos Lima</option>
+        </select>
+
         <Button variant="contained" color="primary" onClick={closeModal}>
           Confirmar
         </Button>

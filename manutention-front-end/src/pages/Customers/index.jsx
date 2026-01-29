@@ -1,4 +1,5 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { DirectionsCar, DeleteIcon, EditIcon } from '@mui/icons-material';
 import styled from "styled-components"
 import ModalCustomer from '../../components/ModalCustomer'
 import {
@@ -15,7 +16,7 @@ import {
     IconButton,
     Button,
     Stack,
-    CssBaseline
+    CssBaseline,
 } from "@mui/material";
 import { useState } from 'react';
 
@@ -70,15 +71,49 @@ const Customers = () => {
                                 <TableCell>Name </TableCell>
                                 <TableCell>Phone</TableCell>
                                 <TableCell>Email</TableCell>
+                                <TableCell>Actions</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody >
                             {customersData.map((item) => (
-                                <TableRow key={item.id} hover style={{ cursor: 'pointer' }} onClick={() => openModal('auto-notifications')}>
+                                <TableRow
+                                    key={item.id}
+                                >
                                     <TableCell>{item.id}</TableCell>
                                     <TableCell>{item.name}</TableCell>
                                     <TableCell>{item.phone}</TableCell>
                                     <TableCell>{item.email}</TableCell>
+                                    <TableCell sx={{ display: 'table-cell', whiteSpace: 'nowrap' }}>
+                                        <Box sx={{ width: '30%' }}>
+                                            <IconButton
+                                                size="small"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    openModal('edit-customer', item);
+                                                }}
+                                            >
+                                                <EditIcon fontSize="small" />
+                                            </IconButton>
+                                            <IconButton
+                                                size="small"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    openModal('delete-customer', item);
+                                                }}
+                                            >
+                                                <DeleteIcon fontSize="small" />
+                                            </IconButton>
+                                            <IconButton
+                                                size="small"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    openModal('edit-customer', item);
+                                                }}
+                                            >
+                                                <DirectionsCar fontSize="small" />
+                                            </IconButton>
+                                        </Box>
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
